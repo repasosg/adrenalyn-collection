@@ -3,37 +3,37 @@
     {
       "categoria": "REGULARES",
       "total": 360,
-      "tengo": 197,
-      "faltan": 163,
-      "progreso": 0.5472222222
+      "tengo": 203,
+      "faltan": 157,
+      "progreso": 0.5638888889
     },
     {
       "categoria": "ESTADIOS",
       "total": 20,
-      "tengo": 14,
-      "faltan": 6,
-      "progreso": 0.7
+      "tengo": 15,
+      "faltan": 5,
+      "progreso": 0.75
     },
     {
       "categoria": "VAMOS",
       "total": 20,
-      "tengo": 8,
-      "faltan": 12,
-      "progreso": 0.4
+      "tengo": 9,
+      "faltan": 11,
+      "progreso": 0.45
     },
     {
       "categoria": "Guantes de Oro",
       "total": 7,
-      "tengo": 2,
-      "faltan": 5,
-      "progreso": 0.2857142857
+      "tengo": 3,
+      "faltan": 4,
+      "progreso": 0.4285714286
     },
     {
       "categoria": "Kryptonita",
       "total": 9,
-      "tengo": 3,
-      "faltan": 6,
-      "progreso": 0.3333333333
+      "tengo": 4,
+      "faltan": 5,
+      "progreso": 0.4444444444
     },
     {
       "categoria": "Diamantes",
@@ -73,9 +73,9 @@
     {
       "categoria": "TOTAL COLECCIÓN",
       "total": 498,
-      "tengo": 264,
-      "faltan": 234,
-      "progreso": 0.5301204819
+      "tengo": 274,
+      "faltan": 224,
+      "progreso": 0.5502008032
     }
   ],
   "regulares": [
@@ -203,7 +203,7 @@
       "nombre": "MARIANO",
       "equipo": "D. ALAVÉS",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 2
     },
     {
       "numero": 19,
@@ -371,7 +371,7 @@
       "nombre": "LENGLET",
       "equipo": "ATLÉTICO DE MADRID",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 2
     },
     {
       "numero": 43,
@@ -595,7 +595,7 @@
       "nombre": "PAU LÓPEZ",
       "equipo": "REAL BETIS",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": 75,
@@ -644,7 +644,7 @@
       "nombre": "JUNIOR",
       "equipo": "REAL BETIS",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 2
     },
     {
       "numero": 82,
@@ -854,7 +854,7 @@
       "nombre": "DITURO",
       "equipo": "ELCHE CF",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": 112,
@@ -958,7 +958,7 @@
       "numero": 126,
       "nombre": "RAFA MIR",
       "equipo": "ELCHE CF",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -1057,14 +1057,14 @@
       "nombre": "DOLAN",
       "equipo": "RCD ESPANYOL",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": 141,
       "nombre": "ROBERTO FERNÁNDEZ",
       "equipo": "RCD ESPANYOL",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": 142,
@@ -1217,7 +1217,7 @@
       "numero": 163,
       "nombre": "ESCUDO",
       "equipo": "GIRONA FC",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -1238,7 +1238,7 @@
       "numero": 166,
       "nombre": "ARNAU",
       "equipo": "GIRONA FC",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -1302,7 +1302,7 @@
       "nombre": "YÁSER ASPRILLA",
       "equipo": "GIRONA FC",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 2
     },
     {
       "numero": 176,
@@ -1589,7 +1589,7 @@
       "nombre": "VINÍCIUS",
       "equipo": "REAL MADRID",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 2
     },
     {
       "numero": 217,
@@ -1736,7 +1736,7 @@
       "nombre": "AITOR FERNÁNDEZ",
       "equipo": "CA OSASUNA",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": 238,
@@ -1827,7 +1827,7 @@
       "nombre": "RAÚL GARCÍA",
       "equipo": "CA OSASUNA",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": 251,
@@ -1890,7 +1890,7 @@
       "nombre": "DANI CALVO",
       "equipo": "REAL OVIEDO",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 2
     },
     {
       "numero": 260,
@@ -2016,14 +2016,14 @@
       "nombre": "LUIZ FELIPE",
       "equipo": "RAYO VALLECANO",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": 278,
       "nombre": "PEP CHAVARRÍA",
       "equipo": "RAYO VALLECANO",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 2
     },
     {
       "numero": 279,
@@ -2170,7 +2170,7 @@
       "nombre": "PABLO MARIN",
       "equipo": "REAL SOCIEDAD",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": 300,
@@ -2260,7 +2260,7 @@
       "numero": 312,
       "nombre": "AZPILICUETA",
       "equipo": "SEVILLA FC",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -2324,7 +2324,7 @@
       "nombre": "EJUKE",
       "equipo": "SEVILLA FC",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 2
     },
     {
       "numero": 322,
@@ -2401,7 +2401,7 @@
       "nombre": "DIAKHABY",
       "equipo": "VALENCIA CF",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": 333,
@@ -2435,7 +2435,7 @@
       "numero": 337,
       "nombre": "ANDRÉ ALMEIDA",
       "equipo": "VALENCIA CF",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -2526,7 +2526,7 @@
       "numero": 350,
       "nombre": "SERGI CARDONA",
       "equipo": "VILLARREAL CF",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -2534,7 +2534,7 @@
       "nombre": "SANTI COMESAÑA",
       "equipo": "VILLARREAL CF",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": 352,
@@ -2678,7 +2678,7 @@
         "numero": 217,
         "nombre": "ESTADIO",
         "equipo": "RCD MALLORCA",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": 235,
@@ -2728,7 +2728,7 @@
         "numero": 361,
         "nombre": "D. ALAVÉS",
         "equipo": "¡VAMOS!",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": 362,
@@ -2886,7 +2886,7 @@
         "numero": 387,
         "nombre": "AGIRREZABALA",
         "equipo": "VALENCIA CF",
-        "tengo": false
+        "tengo": true
       }
     ],
     "Kryptonita": [
@@ -2924,7 +2924,7 @@
         "numero": 393,
         "nombre": "MILITAO",
         "equipo": "REAL MADRID",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": 394,
@@ -3471,7 +3471,7 @@
     "VILLARREAL CF"
   ],
   "metadata": {
-    "ultima_actualizacion": "2026-01-27T18:14:32.327810",
+    "ultima_actualizacion": "2026-01-27T19:46:35.478259",
     "total_cartas": 498,
     "version": "1.0"
   }
