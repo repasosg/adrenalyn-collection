@@ -1,0 +1,41 @@
+name: Actualizar Colección desde Excel
+
+on:
+  push:
+    paths:
+      - 'Checklist_Adrenalyn_XL_2025-26.xlsx'
+  workflow_dispatch:
+
+jobs:
+  update-collection:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: 📦 Install dependencies
+        run: |
+          pip install pandas openpyxl
+          
+      - name: 🔄 Process Excel to JSON
+        run: |
+          python process_excel.py
+          
+      - name: 📊 Show stats
+        run: |
+          echo "✅ JSON generado correctamente"
+          ls -lh data/adrenalyn_data.json
+          
+      - name: 💾 Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add data/adrenalyn_data.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "🔄 Auto-update: Actualizar datos desde Excel [skip ci]"
+          git push
