@@ -105,7 +105,7 @@
       "nombre": "JONNY",
       "equipo": "D. ALAVÉS",
       "tengo": true,
-      "repetidos": 2
+      "repetidos": 1
     },
     {
       "numero": 5,
@@ -399,7 +399,7 @@
       "nombre": "BARRIOS",
       "equipo": "ATLÉTICO DE MADRID",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": 47,
@@ -609,7 +609,7 @@
       "nombre": "BELLERÍN",
       "equipo": "REAL BETIS",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": 77,
@@ -833,7 +833,7 @@
       "nombre": "JUTGLÀ",
       "equipo": "RC CELTA",
       "tengo": true,
-      "repetidos": 2
+      "repetidos": 1
     },
     {
       "numero": 109,
@@ -847,7 +847,7 @@
       "nombre": "IÑAKI PEÑA",
       "equipo": "ELCHE CF",
       "tengo": true,
-      "repetidos": 2
+      "repetidos": 1
     },
     {
       "numero": 111,
@@ -966,7 +966,7 @@
       "nombre": "ESCUDO",
       "equipo": "RCD ESPANYOL",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": 128,
@@ -987,7 +987,7 @@
       "nombre": "EL HILALI",
       "equipo": "RCD ESPANYOL",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": 131,
@@ -1155,7 +1155,7 @@
       "nombre": "DAVINCHI",
       "equipo": "GETAFE CF",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": 155,
@@ -1309,7 +1309,7 @@
       "nombre": "JOEL ROCA",
       "equipo": "GIRONA FC",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": 177,
@@ -1337,7 +1337,7 @@
       "nombre": "BRYAN GIL",
       "equipo": "GIRONA FC",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": 181,
@@ -1722,7 +1722,7 @@
       "nombre": "ESCUDO",
       "equipo": "CA OSASUNA",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": 236,
@@ -1757,7 +1757,7 @@
       "nombre": "CATENA",
       "equipo": "CA OSASUNA",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": 241,
@@ -1890,7 +1890,7 @@
       "nombre": "DANI CALVO",
       "equipo": "REAL OVIEDO",
       "tengo": true,
-      "repetidos": 2
+      "repetidos": 1
     },
     {
       "numero": 260,
@@ -1981,7 +1981,7 @@
       "nombre": "BATALLA",
       "equipo": "RAYO VALLECANO",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": 273,
@@ -2044,7 +2044,7 @@
       "nombre": "ÓSCAR VALENTÍN",
       "equipo": "RAYO VALLECANO",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": 282,
@@ -2058,7 +2058,7 @@
       "nombre": "PEDRO DÍAZ",
       "equipo": "RAYO VALLECANO",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": 284,
@@ -2121,7 +2121,7 @@
       "nombre": "ARAMBURU",
       "equipo": "REAL SOCIEDAD",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": 293,
@@ -2268,7 +2268,7 @@
       "nombre": "KIKE SALAS",
       "equipo": "SEVILLA FC",
       "tengo": true,
-      "repetidos": 2
+      "repetidos": 1
     },
     {
       "numero": 314,
@@ -2296,7 +2296,7 @@
       "nombre": "AGOUME",
       "equipo": "SEVILLA FC",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": 318,
@@ -2401,7 +2401,7 @@
       "nombre": "DIAKHABY",
       "equipo": "VALENCIA CF",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": 333,
@@ -2541,7 +2541,7 @@
       "nombre": "PAPE GUEYE",
       "equipo": "VILLARREAL CF",
       "tengo": true,
-      "repetidos": 2
+      "repetidos": 1
     },
     {
       "numero": 353,
@@ -3471,7 +3471,7 @@
     "VILLARREAL CF"
   ],
   "metadata": {
-    "ultima_actualizacion": "2026-01-27T19:47:40.824867",
+    "ultima_actualizacion": "2026-01-28T19:28:32.585122",
     "total_cartas": 498,
     "version": "1.0"
   }
