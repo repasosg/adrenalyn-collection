@@ -1,0 +1,126 @@
+#!/usr/bin/env python3
+import pandas as pd
+import json
+from datetime import datetime
+import sys
+
+def process_excel_to_json(excel_path, output_path):
+    """
+    Procesa el Excel de Adrenalyn XL y genera un JSON
+    """
+    try:
+        # Cargar el archivo Excel
+        xls = pd.ExcelFile(excel_path)
+        
+        # 1. Procesar RESUMEN
+        df_resumen = pd.read_excel(excel_path, sheet_name='RESUMEN', header=1)
+        resumen = []
+        for _, row in df_resumen.iterrows():
+            if pd.notna(row.iloc[0]):
+                resumen.append({
+                    'categoria': str(row.iloc[0]),
+                    'total': int(row.iloc[1]) if pd.notna(row.iloc[1]) else 0,
+                    'tengo': int(row.iloc[2]) if pd.notna(row.iloc[2]) else 0,
+                    'faltan': int(row.iloc[3]) if pd.notna(row.iloc[3]) else 0,
+                    'progreso': float(row.iloc[4]) if pd.notna(row.iloc[4]) else 0
+                })
+        
+        # 2. Procesar REGULARES (sin header)
+        df_regulares = pd.read_excel(excel_path, sheet_name='REGULARES', header=None)
+        regulares = []
+        for _, row in df_regulares.iterrows():
+            if pd.notna(row.iloc[0]):
+                regulares.append({
+                    'numero': str(row.iloc[0]),
+                    'nombre': str(row.iloc[1]) if pd.notna(row.iloc[1]) else '',
+                    'equipo': str(row.iloc[2]) if pd.notna(row.iloc[2]) else '',
+                    'tengo': str(row.iloc[3]) == 'SI' if pd.notna(row.iloc[3]) else False,
+                    'repetidos': int(row.iloc[4]) if pd.notna(row.iloc[4]) else 0
+                })
+        
+        # 3. Procesar REPETIDOS (pestaña específica)
+        df_repetidos_sheet = pd.read_excel(excel_path, sheet_name='REPETIDOS', header=None)
+        repetidos_list = []
+        for _, row in df_repetidos_sheet.iterrows():
+            if pd.notna(row.iloc[0]):
+                repetidos_list.append({
+                    'numero': str(row.iloc[0]),
+                    'nombre': str(row.iloc[1]) if pd.notna(row.iloc[1]) else '',
+                    'equipo': str(row.iloc[2]) if pd.notna(row.iloc[2]) else '',
+                    'copias': int(row.iloc[3]) if pd.notna(row.iloc[3]) else 0
+                })
+        
+        # 4. Obtener lista de equipos únicos
+        equipos = sorted(list(set([c['equipo'] for c in regulares if c['equipo']])))
+        
+        # 5. Procesar hojas especiales
+        especiales = {}
+        hojas_especiales = [
+            ('Estadios', 'Estadios'),
+            ('¡VAMOS! (361–380)', 'VAMOS'),
+            ('Guantes de Oro (381–387)', 'Guantes de Oro'),
+            ('Kryptonita (388–396)', 'Kryptonita'),
+            ('Diamantes (397–414)', 'Diamantes'),
+            ('Influencers (415–423)', 'Influencers'),
+            ('Protas (424–441)', 'Protas'),
+            ('Super Cracks (442–467)', 'Super Cracks'),
+            ('Cartas Top y Únicas (468–478)', 'Cartas Top y Únicas')
+        ]
+        
+        for hoja_nombre, categoria_nombre in hojas_especiales:
+            if hoja_nombre in xls.sheet_names:
+                df = pd.read_excel(excel_path, sheet_name=hoja_nombre, header=None)
+                cartas = []
+                for _, row in df.iterrows():
+                    if pd.notna(row.iloc[0]):
+                        cartas.append({
+                            'numero': str(row.iloc[0]),
+                            'nombre': str(row.iloc[1]) if pd.notna(row.iloc[1]) else '',
+                            'equipo': str(row.iloc[2]) if pd.notna(row.iloc[2]) else '',
+                            'tengo': str(row.iloc[3]) == 'SI' if pd.notna(row.iloc[3]) else False
+                        })
+                especiales[categoria_nombre] = cartas
+        
+        # 6. Construir el JSON final
+        data = {
+            'metadata': {
+                'ultima_actualizacion': datetime.now().isoformat(),
+                'version': '2.0'
+            },
+            'resumen': resumen,
+            'regulares': regulares,
+            'repetidos': repetidos_list,  # Nueva sección
+            'especiales': especiales,
+            'equipos': equipos
+        }
+        
+        # Guardar JSON
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        
+        print(f"✅ JSON generado correctamente: {output_path}")
+        print(f"📊 Estadísticas:")
+        print(f"   - Categorías en resumen: {len(resumen)}")
+        print(f"   - Cartas regulares: {len(regulares)}")
+        print(f"   - Cartas repetidas: {len(repetidos_list)}")
+        print(f"   - Categorías especiales: {len(especiales)}")
+        print(f"   - Equipos: {len(equipos)}")
+        
+        return True
+        
+    except Exception as e:
+        print(f"❌ Error al procesar el Excel: {str(e)}", file=sys.stderr)
+        import traceback
+        traceback.print_exc()
+        return False
+
+if __name__ == "__main__":
+    excel_file = "Checklist_Adrenalyn_XL_2025-26.xlsx"
+    output_file = "data/adrenalyn_data.json"
+    
+    # Crear directorio data si no existe
+    import os
+    os.makedirs('data', exist_ok=True)
+    
+    success = process_excel_to_json(excel_file, output_file)
+    sys.exit(0 if success else 1)
