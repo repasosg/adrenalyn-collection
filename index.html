@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adrenalyn XL 2025-26 | LaLiga Collection Pro</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&family=Saira+Condensed:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      /* Tema Estadio (por defecto) */
+      --grass-dark: #1a4d2e;
+      --grass-light: #2d6a4f;
+      --grass-accent: #40916c;
+      --field-line: #ffffff;
+      --spotlight: #ffd60a;
+      --laliga-orange: #FF4200;
+      --laliga-blue: #001F54;
+      --ea-cyan: #00E5FF;
+      --ea-green: #00FF41;
+      
+      /* Colores funcionales */
+      --bg-primary: #0a1612;
+      --bg-secondary: #132920;
+      --bg-elevated: #1a3829;
+      --text: #ffffff;
+      --text-dim: #95c9b4;
+      --success: #00FF41;
+      --warning: #FFB800;
+      --danger: #FF4200;
+      --border: rgba(255, 255, 255, 0.1);
+      
+      /* Efectos */
+      --glow-green: rgba(64, 145, 108, 0.6);
+      --glow-orange: rgba(255, 66, 0, 0.6);
+      --spotlight-glow: rgba(255, 214, 10, 0.4);
+    }
+
+    [data-theme="dark"] {
+      --grass-dark: #0a0a14;
+      --grass-light: #14142d;
+      --grass-accent: #1e1e3f;
+      --bg-primary: #05050a;
+      --bg-secondary: #0f0f1a;
+      --bg-elevated: #1a1a2e;
+      --text-dim: #9ba3af;
+      --glow-green: rgba(0, 229, 255, 0.6);
+    }
+
+    [data-theme="light"] {
+      --grass-dark: #f0f9ff;
+      --grass-light: #e0f2fe;
+      --grass-accent: #bae6fd;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafc;
+      --bg-elevated: #f1f5f9;
+      --text: #0f172a;
+      --text-dim: #475569;
+      --border: rgba(0, 0, 0, 0.1);
+      --glow-green: rgba(64, 145, 108, 0.3);
+      --glow-orange: rgba(255, 66, 0, 0.3);
+    }
+
+    body {
+      font-family: 'Saira Condensed', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text);
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    /* Césped animado de fondo */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        linear-gradient(90deg, transparent 0%, var(--grass-dark) 50%, transparent 100%),
+        repeating-linear-gradient(
+          0deg,
+          var(--grass-dark) 0px,
+          var(--grass-light) 2px,
+          var(--grass-dark) 4px,
+          var(--grass-light) 6px,
+          var(--grass-dark) 8px
+        );
+      opacity: 0.3;
+      z-index: 0;
+      pointer-events: none;
+      animation: grassWave 20s ease-in-out infinite;
+    }
+
+    @keyframes grassWave {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(10px); }
+    }
+
+    /* Líneas de campo */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        /* Línea central */
+        linear-gradient(90deg, transparent 49.5%, var(--field-line) 49.5%, var(--field-line) 50.5%, transparent 50.5%),
+        /* Círculo central */
+        radial-gradient(circle at 50% 50%, transparent 98px, var(--field-line) 98px, var(--field-line) 100px, transparent 100px),
+        /* Áreas */
+        linear-gradient(0deg, transparent 0%, transparent 15%, var(--field-line) 15%, var(--field-line) 15.2%, transparent 15.2%),
+        linear-gradient(0deg, transparent 0%, transparent 85%, var(--field-line) 85%, var(--field-line) 85.2%, transparent 85.2%);
+      opacity: 0.05;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Focos de estadio animados */
+    .stadium-lights {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .spotlight {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--spotlight-glow) 0%, transparent 70%);
+      animation: spotlightMove 15s ease-in-out infinite;
+      opacity: 0.15;
+    }
+
+    .spotlight:nth-child(1) {
+      top: -200px;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .spotlight:nth-child(2) {
+      top: -200px;
+      right: 10%;
+      animation-delay: 5s;
+    }
+
+    .spotlight:nth-child(3) {
+      bottom: -200px;
+      left: 30%;
+      animation-delay: 10s;
+    }
+
+    @keyframes spotlightMove {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0.15; }
+      50% { transform: translateY(50px) scale(1.1); opacity: 0.25; }
+    }
+
+    #root {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Sidebar colapsable */
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      width: 280px;
+      background: var(--bg-secondary);
+      border-right: 1px solid var(--border);
+      transform: translateX(-280px);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 100;
+      overflow-y: auto;
+      box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .sidebar.open {
+      transform: translateX(0);
+    }
+
+    .sidebar-header {
+      padding: 30px 20px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-elevated);
+    }
+
+    .sidebar-logo {
+      font-family: 'Teko', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--laliga-orange), var(--ea-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    .sidebar-nav {
+      padding: 20px 0;
+    }
+
+    .sidebar-nav-item {
+      padding: 15px 25px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: var(--text-dim);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-left: 3px solid transparent;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .sidebar-nav-item:hover {
+      background: var(--bg-elevated);
+      color: var(--text);
+      border-left-color: var(--laliga-orange);
+    }
+
+    .sidebar-nav-item.active {
+      background: var(--bg-elevated);
+      color: var(--laliga-orange);
+      border-left-color: var(--laliga-orange);
+    }
+
+    .sidebar-nav-icon {
+      font-size: 1.3rem;
+    }
+
+    .sidebar-footer {
+      padding: 20px;
+      border-top: 1px solid var(--border);
+      margin-top: auto;
+    }
+
+    /* Toggle sidebar button */
+    .sidebar-toggle {
+      position: fixed;
+      left: 20px;
+      top: 20px;
+      width: 50px;
+      height: 50px;
+      background: var(--bg-elevated);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 101;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .sidebar-toggle:hover {
+      background: var(--laliga-orange);
+      border-color: var(--laliga-orange);
+      transform: scale(1.1);
+    }
+
+    .sidebar-toggle-icon {
+      width: 24px;
+      height: 20px;
+      position: relative;
+    }
+
+    .sidebar-toggle-icon span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar-toggle-icon span:nth-child(1) { top: 0; }
+    .sidebar-toggle-icon span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+    .sidebar-toggle-icon span:nth-child(3) { bottom: 0; }
+
+    .sidebar-toggle.active .sidebar-toggle-icon span:nth-child(1) {
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    .sidebar-toggle.active .sidebar-toggle-icon span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .sidebar-toggle.active .sidebar-toggle-icon span:nth-child(3) {
+      bottom: 50%;
+      transform: translateY(50%) rotate(-45deg);
+    }
+
+    /* Overlay para sidebar */
+    .sidebar-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 99;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .sidebar-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* Badge flotante de última actualización */
+    .update-badge {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 50;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      animation: badgeFloat 3s ease-in-out infinite;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+
+    .update-badge-icon {
+      width: 8px;
+      height: 8px;
+      background: var(--ea-green);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--ea-green);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes badgeFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.2); }
+    }
+
+    /* Theme toggle */
+    .theme-toggle {
+      display: flex;
+      gap: 8px;
+      padding: 10px;
+      background: var(--bg-primary);
+      border-radius: 25px;
+      border: 1px solid var(--border);
+    }
+
+    .theme-toggle-btn {
+      padding: 8px 16px;
+      background: transparent;
+      border: none;
+      border-radius: 20px;
+      color: var(--text-dim);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .theme-toggle-btn.active {
+      background: var(--laliga-orange);
+      color: white;
+    }
+
+    /* Main content con offset para sidebar */
+    .app-container {
+      transition: margin-left 0.3s ease;
+      max-width: 100%;
+    }
+
+    .content-wrapper {
+      padding: 20px;
+      margin-left: 80px;
+      margin-right: 20px;
+    }
+
+    /* Hero más orgánico con césped */
+    .hero-header {
+      position: relative;
+      min-height: 450px;
+      overflow: hidden;
+      margin: 20px;
+      margin-left: 80px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--grass-dark) 0%, var(--grass-light) 100%);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .grass-texture {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        repeating-linear-gradient(
+          0deg,
+          transparent 0px,
+          rgba(255, 255, 255, 0.02) 1px,
+          transparent 2px,
+          transparent 8px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent 0px,
+          rgba(255, 255, 255, 0.01) 1px,
+          transparent 2px,
+          transparent 100px
+        );
+      opacity: 0.5;
+    }
+
+    .field-lines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        /* Línea central */
+        linear-gradient(90deg, transparent 49%, var(--field-line) 49%, var(--field-line) 51%, transparent 51%),
+        /* Círculo central */
+        radial-gradient(circle at 50% 50%, transparent 80px, var(--field-line) 80px, var(--field-line) 82px, transparent 82px),
+        /* Área pequeña */
+        radial-gradient(ellipse 200px 150px at 50% 100%, transparent 148px, var(--field-line) 148px, var(--field-line) 150px, transparent 150px);
+      opacity: 0.15;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 80px 40px 40px;
+    }
+
+    .hero-badge {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 25px;
+      background: radial-gradient(circle, var(--laliga-orange), var(--danger));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      box-shadow: 
+        0 0 40px var(--glow-orange),
+        0 10px 30px rgba(0, 0, 0, 0.5);
+      animation: badgeFloat 3s ease-in-out infinite;
+      border: 4px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-title {
+      font-family: 'Teko', sans-serif;
+      font-size: clamp(3rem, 10vw, 7rem);
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, white 0%, var(--ea-cyan) 50%, white 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+      animation: gradientShift 4s ease infinite;
+      text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+      line-height: 1;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% center; }
+      50% { background-position: 100% center; }
+    }
+
+    .hero-subtitle {
+      font-family: 'Teko', sans-serif;
+      font-size: clamp(1.3rem, 3vw, 2.2rem);
+      font-weight: 400;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 40px;
+    }
+
+    .hero-stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .hero-stat {
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-stat::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 2px;
+      background: var(--laliga-orange);
+    }
+
+    .hero-stat-value {
+      font-family: 'Teko', sans-serif;
+      font-size: 4rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--ea-green), var(--ea-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+      text-shadow: 0 0 30px var(--glow-green);
+    }
+
+    .hero-stat-label {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-top: 8px;
+      font-weight: 600;
+    }
+    /* Calculadora de progreso */
+    .progress-calculator {
+      background: var(--bg-elevated);
+      border: 2px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .calculator-title {
+      font-family: 'Teko', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--laliga-orange), var(--ea-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .calculator-inputs {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .calculator-input {
+      padding: 12px 20px;
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 600;
+      width: 100px;
+      text-align: center;
+    }
+
+    .calculator-result {
+      padding: 20px;
+      background: linear-gradient(135deg, rgba(255, 66, 0, 0.1), rgba(0, 229, 255, 0.1));
+      border-radius: 15px;
+      border: 1px solid var(--border);
+    }
+
+    .calculator-result-text {
+      font-size: 1.1rem;
+      color: var(--text-dim);
+      margin-bottom: 10px;
+    }
+
+    .calculator-result-value {
+      font-family: 'Teko', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--ea-cyan);
+      text-shadow: 0 0 20px var(--glow-green);
+    }
+
+    /* Gráficos circulares */
+    .charts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .chart-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .chart-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .chart-card-title {
+      font-family: 'Teko', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+      color: var(--text);
+    }
+
+    .chart-canvas {
+      max-height: 250px;
+    }
+
+    /* Timeline de cartas */
+    .timeline-section {
+      margin-bottom: 50px;
+    }
+
+    .timeline {
+      position: relative;
+      padding: 40px 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--laliga-orange), var(--ea-cyan), var(--ea-green));
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .timeline-item:nth-child(odd) {
+      flex-direction: row;
+    }
+
+    .timeline-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .timeline-content {
+      flex: 1;
+      max-width: 45%;
+      background: var(--bg-elevated);
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      animation: timelineFadeIn 0.6s ease;
+    }
+
+    @keyframes timelineFadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .timeline-date {
+      font-family: 'Teko', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--laliga-orange);
+      margin-bottom: 10px;
+    }
+
+    .timeline-cards {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .timeline-card-mini {
+      padding: 8px 15px;
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .timeline-dot {
+      width: 20px;
+      height: 20px;
+      background: var(--laliga-orange);
+      border-radius: 50%;
+      border: 4px solid var(--bg-primary);
+      box-shadow: 0 0 20px var(--glow-orange);
+      flex-shrink: 0;
+      margin: 0 20px;
+      z-index: 1;
+    }
+
+    /* Stats grid mejorados */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .stat-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 35px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--laliga-orange), var(--ea-cyan), var(--ea-green));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.6s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 25px 70px var(--glow-green);
+      border-color: var(--grass-accent);
+    }
+
+    .stat-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .stat-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      display: block;
+      filter: drop-shadow(0 0 15px var(--laliga-orange));
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .stat-value {
+      font-family: 'Teko', sans-serif;
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+      text-shadow: 0 0 25px var(--glow-green);
+    }
+
+    .stat-progress {
+      margin-top: 20px;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 5px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .stat-progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--grass-accent), var(--ea-cyan), var(--ea-green));
+      background-size: 200% 100%;
+      border-radius: 5px;
+      transition: width 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: progressShine 3s ease-in-out infinite;
+    }
+
+    @keyframes progressShine {
+      0%, 100% { background-position: 0% center; }
+      50% { background-position: 100% center; }
+    }
+
+    /* Export section mejorada */
+    .export-section {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+      padding: 25px;
+      background: var(--bg-elevated);
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .export-btn {
+      padding: 15px 30px;
+      background: linear-gradient(135deg, var(--grass-accent), var(--ea-cyan));
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-family: 'Teko', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(64, 145, 108, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .export-btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+
+    .export-btn:hover::before {
+      width: 400px;
+      height: 400px;
+    }
+
+    .export-btn:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 40px rgba(64, 145, 108, 0.6);
+    }
+
+    .export-btn span {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Tabs mejorados */
+    .tabs-container {
+      margin-bottom: 35px;
+      position: relative;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+
+    .tabs::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--grass-accent), transparent);
+      border-radius: 2px;
+    }
+
+    .tab {
+      padding: 18px 35px;
+      background: var(--bg-secondary);
+      border: 2px solid var(--border);
+      border-radius: 12px 12px 0 0;
+      color: var(--text-dim);
+      font-family: 'Teko', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      white-space: nowrap;
+      border-bottom: none;
+    }
+
+    .tab::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 0;
+      background: linear-gradient(135deg, var(--grass-accent), var(--ea-cyan));
+      transition: height 0.3s ease;
+    }
+
+    .tab:hover {
+      color: var(--text);
+      border-color: var(--grass-accent);
+    }
+
+    .tab.active {
+      color: var(--ea-cyan);
+      background: var(--bg-elevated);
+      border-color: var(--grass-accent);
+      box-shadow: 0 -4px 20px rgba(64, 145, 108, 0.3);
+    }
+
+    .tab.active::before {
+      height: 4px;
+    }
+
+    /* Cards de colección mejoradas */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: var(--bg-secondary);
+      border: 2px solid var(--border);
+      border-radius: 18px;
+      padding: 25px;
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+      animation: cardFadeIn 0.6s ease;
+      overflow: hidden;
+    }
+
+    @keyframes cardFadeIn {
+      from { opacity: 0; transform: translateY(30px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+                  rgba(64, 145, 108, 0.15) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card:hover {
+      transform: translateY(-15px) rotate(-2deg) scale(1.05);
+      border-color: var(--grass-accent);
+      box-shadow: 0 25px 70px rgba(64, 145, 108, 0.4);
+    }
+
+    .card.owned {
+      border-color: var(--ea-green);
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(0, 255, 65, 0.08) 100%);
+    }
+
+    .card.owned:hover {
+      box-shadow: 0 25px 70px rgba(0, 255, 65, 0.5);
+    }
+
+    .card.repeated {
+      border-color: var(--warning);
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(255, 184, 0, 0.08) 100%);
+    }
+
+    .card.repeated:hover {
+      box-shadow: 0 25px 70px rgba(255, 184, 0, 0.5);
+    }
+
+    .card-number {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-family: 'Teko', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-dim);
+      text-shadow: 0 0 12px var(--glow-orange);
+    }
+
+    .card-name {
+      font-family: 'Teko', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 1.2;
+      padding-right: 55px;
+      color: var(--text);
+    }
+
+    .card-team {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      margin-bottom: 18px;
+      line-height: 1.4;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card-status {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 2px solid var(--border);
+    }
+
+    .status-badge {
+      padding: 8px 18px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .status-badge.owned {
+      background: var(--ea-green);
+      color: var(--bg-primary);
+    }
+
+    .status-badge.missing {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-dim);
+    }
+
+    .repeated-count {
+      font-family: 'Teko', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--warning);
+      text-shadow: 0 0 15px rgba(255, 184, 0, 0.6);
+    }
+
+    /* Category sections */
+    .category-section {
+      margin-bottom: 55px;
+      animation: sectionFadeIn 0.8s ease;
+    }
+
+    @keyframes sectionFadeIn {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .category-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding: 30px 35px;
+      background: linear-gradient(135deg, rgba(64, 145, 108, 0.15) 0%, transparent 100%);
+      border-left: 6px solid var(--grass-accent);
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .category-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.08));
+      pointer-events: none;
+    }
+
+    .category-title {
+      font-family: 'Teko', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      background: linear-gradient(135deg, var(--grass-accent), var(--ea-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .category-stats {
+      display: flex;
+      gap: 35px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .category-stat {
+      text-align: center;
+    }
+
+    .category-stat-value {
+      font-family: 'Teko', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--ea-cyan);
+      text-shadow: 0 0 20px var(--glow-green);
+      line-height: 1;
+    }
+
+    .category-stat-label {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 8px;
+      font-weight: 700;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        transform: translateX(-100%);
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      .content-wrapper {
+        margin-left: 20px;
+      }
+
+      .hero-header {
+        margin-left: 20px;
+        min-height: 350px;
+      }
+
+      .hero-stats-row {
+        gap: 30px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 18px;
+      }
+
+      .category-header {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+      }
+
+      .charts-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-item {
+        flex-direction: column !important;
+        align-items: flex-start;
+        padding-left: 50px;
+      }
+
+      .timeline-content {
+        max-width: 100%;
+      }
+
+      .timeline-dot {
+        position: absolute;
+        left: 0;
+      }
+    }
+
+    /* Loading mejorado */
+    .loading {
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    .loading-spinner {
+      width: 70px;
+      height: 70px;
+      border: 5px solid var(--border);
+      border-top-color: var(--grass-accent);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 25px;
+      box-shadow: 0 0 40px var(--glow-green);
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+      font-family: 'Teko', sans-serif;
+      font-size: 2rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="stadium-lights">
+    <div class="spotlight"></div>
+    <div class="spotlight"></div>
+    <div class="spotlight"></div>
+  </div>
+  <div id="root"></div>
+  <script type="text/babel">
+const { useState, useEffect, useMemo, useRef } = React;
+
+function exportToExcel(data, filename) {
+  const ws = XLSX.utils.json_to_sheet(data);
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Datos");
+  XLSX.writeFile(wb, filename);
+}
+
+function App() {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [activeTab, setActiveTab] = useState('dashboard');
+  const [filterEquipo, setFilterEquipo] = useState('todos');
+  const [filterEstado, setFilterEstado] = useState('todos');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('REGULARES');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [theme, setTheme] = useState('estadio');
+  const [targetPercentage, setTargetPercentage] = useState(100);
+  
+  const chartProgressRef = useRef(null);
+  const chartCategoriesRef = useRef(null);
+  
+  useEffect(() => {
+    document.body.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  useEffect(() => {
+    fetch('data/adrenalyn_data.json')
+      .then(response => {
+        if (!response.ok) throw new Error('Error al cargar los datos');
+        return response.json();
+      })
+      .then(jsonData => {
+        setData(jsonData);
+        setLoading(false);
+      })
+      .catch(err => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
+  // Crear gráficos con Chart.js
+  useEffect(() => {
+    if (!data || activeTab !== 'dashboard') return;
+
+    // Gráfico de progreso general
+    if (chartProgressRef.current) {
+      const ctx = chartProgressRef.current.getContext('2d');
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Tengo', 'Faltan'],
+          datasets: [{
+            data: [totalTengo, totalFaltan],
+            backgroundColor: ['#00FF41', '#FF4200'],
+            borderWidth: 0
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          plugins: {
+            legend: {
+              labels: { color: '#ffffff', font: { size: 14, family: 'Teko' } }
+            }
+          }
+        }
+      });
+    }
+
+    // Gráfico por categorías
+    if (chartCategoriesRef.current) {
+      const ctx = chartCategoriesRef.current.getContext('2d');
+      const categories = data.resumen.filter(r => r.categoria !== 'TOTAL COLECCIÓN');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: categories.map(c => c.categoria),
+          datasets: [{
+            label: 'Progreso %',
+            data: categories.map(c => (c.progreso * 100).toFixed(0)),
+            backgroundColor: '#40916c',
+            borderColor: '#00E5FF',
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          scales: {
+            y: { 
+              beginAtZero: true, 
+              max: 100,
+              ticks: { color: '#95c9b4' }
+            },
+            x: { 
+              ticks: { color: '#95c9b4', font: { size: 10 } } 
+            }
+          },
+          plugins: {
+            legend: {
+              labels: { color: '#ffffff', font: { family: 'Teko' } }
+            }
+          }
+        }
+      });
+    }
+  }, [data, activeTab]);
+
+  const totalCartas = useMemo(() => {
+    if (!data) return 0;
+    const totalRes = data.resumen.find(r => r.categoria === 'TOTAL COLECCIÓN');
+    return totalRes ? totalRes.total : data.resumen.reduce((sum, cat) => {
+      if (cat.categoria !== 'TOTAL COLECCIÓN') return sum + cat.total;
+      return sum;
+    }, 0);
+  }, [data]);
+
+  const totalTengo = useMemo(() => {
+    if (!data) return 0;
+    const totalRes = data.resumen.find(r => r.categoria === 'TOTAL COLECCIÓN');
+    return totalRes ? totalRes.tengo : data.resumen.reduce((sum, cat) => {
+      if (cat.categoria !== 'TOTAL COLECCIÓN') return sum + cat.tengo;
+      return sum;
+    }, 0);
+  }, [data]);
+
+  const totalFaltan = useMemo(() => {
+    if (!data) return 0;
+    return totalCartas - totalTengo;
+  }, [totalCartas, totalTengo]);
+
+  const progresoTotal = useMemo(() => {
+    return (totalTengo / totalCartas * 100).toFixed(1);
+  }, [totalTengo, totalCartas]);
+
+  const totalRepetidos = useMemo(() => {
+    if (!data) return 0;
+    return data.regulares.reduce((sum, card) => sum + card.repetidos, 0);
+  }, [data]);
+
+  const todasLasCartas = useMemo(() => {
+    if (!data) return [];
+    const cartas = [...data.regulares];
+    Object.entries(data.especiales).forEach(([categoria, cards]) => {
+      cards.forEach(card => {
+        cartas.push({...card, categoria, repetidos: 0});
+      });
+    });
+    return cartas;
+  }, [data]);
+
+  const cartasFiltradas = useMemo(() => {
+    if (!data) return [];
+    let cartas = todasLasCartas;
+
+    if (selectedCategory !== 'TODAS') {
+      if (selectedCategory === 'REGULARES') {
+        cartas = data.regulares;
+      } else {
+        cartas = data.especiales[selectedCategory] || [];
+      }
+    }
+
+    return cartas.filter(carta => {
+      const matchEquipo = filterEquipo === 'todos' || carta.equipo === filterEquipo;
+      const matchEstado = filterEstado === 'todos' || 
+        (filterEstado === 'tengo' && carta.tengo) ||
+        (filterEstado === 'faltan' && !carta.tengo) ||
+        (filterEstado === 'repetidos' && carta.repetidos > 0);
+      const matchSearch = carta.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         carta.equipo.toLowerCase().includes(searchTerm.toLowerCase());
+      
+      return matchEquipo && matchEstado && matchSearch;
+    });
+  }, [data, filterEquipo, filterEstado, searchTerm, selectedCategory, todasLasCartas]);
+
+  const categorias = useMemo(() => {
+    if (!data) return [];
+    return ['TODAS', 'REGULARES', ...Object.keys(data.especiales)];
+  }, [data]);
+
+  const estatsPorEquipo = useMemo(() => {
+    if (!data) return [];
+    const equiposMap = {};
+    
+    data.regulares.forEach(carta => {
+      if (!equiposMap[carta.equipo]) {
+        equiposMap[carta.equipo] = { total: 0, tengo: 0, faltan: 0 };
+      }
+      equiposMap[carta.equipo].total++;
+      if (carta.tengo) {
+        equiposMap[carta.equipo].tengo++;
+      } else {
+        equiposMap[carta.equipo].faltan++;
+      }
+    });
+
+    return Object.entries(equiposMap).map(([equipo, stats]) => ({
+      equipo,
+      ...stats,
+      progreso: (stats.tengo / stats.total * 100).toFixed(1)
+    })).sort((a, b) => b.progreso - a.progreso);
+  }, [data]);
+
+  // Calculadora de cartas necesarias
+  const cartasNecesarias = useMemo(() => {
+    const cartasTarget = Math.ceil((targetPercentage / 100) * totalCartas);
+    const necesarias = Math.max(0, cartasTarget - totalTengo);
+    return necesarias;
+  }, [targetPercentage, totalCartas, totalTengo]);
+
+  // Timeline simulada (últimas 30 cartas conseguidas)
+  const timelineData = useMemo(() => {
+    if (!data) return [];
+    const cartasTengo = data.regulares.filter(c => c.tengo).slice(-30);
+    const grouped = {};
+    
+    // Simular fechas (en producción real, esto vendría del JSON con fechas reales)
+    cartasTengo.forEach((carta, idx) => {
+      const fecha = new Date();
+      fecha.setDate(fecha.getDate() - Math.floor((30 - idx) / 3));
+      const fechaStr = fecha.toLocaleDateString('es-ES', { day: '2-digit', month: 'short', year: 'numeric' });
+      
+      if (!grouped[fechaStr]) {
+        grouped[fechaStr] = [];
+      }
+      grouped[fechaStr].push(carta);
+    });
+
+    return Object.entries(grouped).map(([fecha, cartas]) => ({ fecha, cartas })).reverse();
+  }, [data]);
+
+  const exportarFaltantes = () => {
+    const faltantes = todasLasCartas.filter(c => !c.tengo).map(c => ({
+      'Número': c.numero,
+      'Nombre': c.nombre,
+      'Equipo': c.equipo,
+      'Categoría': c.categoria || 'REGULARES'
+    }));
+    exportToExcel(faltantes, 'Adrenalyn_Faltantes.xlsx');
+  };
+
+  const exportarRepetidos = () => {
+    const repetidos = data.regulares.filter(c => c.repetidos > 0).map(c => ({
+      'Número': c.numero,
+      'Nombre': c.nombre,
+      'Equipo': c.equipo,
+      'Cantidad': c.repetidos
+    }));
+    exportToExcel(repetidos, 'Adrenalyn_Repetidos.xlsx');
+  };
+
+  const exportarIntercambios = () => {
+    const faltantes = todasLasCartas.filter(c => !c.tengo).map(c => ({
+      'Tipo': 'ME FALTA',
+      'Número': c.numero,
+      'Nombre': c.nombre,
+      'Equipo': c.equipo,
+      'Categoría': c.categoria || 'REGULARES'
+    }));
+    
+    const repetidos = data.regulares.filter(c => c.repetidos > 0).map(c => ({
+      'Tipo': 'REPETIDO',
+      'Número': c.numero,
+      'Nombre': c.nombre,
+      'Equipo': c.equipo,
+      'Cantidad': c.repetidos
+    }));
+
+    const intercambios = [...faltantes, ...repetidos];
+    exportToExcel(intercambios, 'Adrenalyn_Lista_Intercambios.xlsx');
+  };
+
+  if (loading) {
+    return (
+      <div className="loading">
+        <div className="loading-spinner"></div>
+        <div className="loading-text">Cargando colección...</div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="loading">
+        <div className="loading-text" style={{color: 'var(--danger)'}}>Error: {error}</div>
+      </div>
+    );
+  }
+
+  const lastUpdate = data.metadata?.ultima_actualizacion 
+    ? new Date(data.metadata.ultima_actualizacion).toLocaleString('es-ES')
+    : 'No disponible';
+
+  return (
+    <>
+      {/* Badge de última actualización */}
+      <div className="update-badge">
+        <div className="update-badge-icon"></div>
+        <span>Actualizado: {lastUpdate}</span>
+      </div>
+
+      {/* Sidebar toggle */}
+      <div 
+        className={`sidebar-toggle ${sidebarOpen ? 'active' : ''}`}
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+      >
+        <div className="sidebar-toggle-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      {/* Overlay */}
+      <div 
+        className={`sidebar-overlay ${sidebarOpen ? 'active' : ''}`}
+        onClick={() => setSidebarOpen(false)}
+      ></div>
+
+      {/* Sidebar */}
+      <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
+        <div className="sidebar-header">
+          <div className="sidebar-logo">Adrenalyn XL</div>
+          <div style={{fontSize: '0.85rem', color: 'var(--text-dim)'}}>LaLiga 2025-26</div>
+        </div>
+
+        <div className="sidebar-nav">
+          <div 
+            className={`sidebar-nav-item ${activeTab === 'dashboard' ? 'active' : ''}`}
+            onClick={() => { setActiveTab('dashboard'); setSidebarOpen(false); }}
+          >
+            <span className="sidebar-nav-icon">📊</span>
+            <span>Dashboard</span>
+          </div>
+          <div 
+            className={`sidebar-nav-item ${activeTab === 'coleccion' ? 'active' : ''}`}
+            onClick={() => { setActiveTab('coleccion'); setSidebarOpen(false); }}
+          >
+            <span className="sidebar-nav-icon">🃏</span>
+            <span>Colección</span>
+          </div>
+          <div 
+            className={`sidebar-nav-item ${activeTab === 'equipos' ? 'active' : ''}`}
+            onClick={() => { setActiveTab('equipos'); setSidebarOpen(false); }}
+          >
+            <span className="sidebar-nav-icon">⚽</span>
+            <span>Por Equipos</span>
+          </div>
+          <div 
+            className={`sidebar-nav-item ${activeTab === 'estadisticas' ? 'active' : ''}`}
+            onClick={() => { setActiveTab('estadisticas'); setSidebarOpen(false); }}
+          >
+            <span className="sidebar-nav-icon">📈</span>
+            <span>Estadísticas</span>
+          </div>
+          <div 
+            className={`sidebar-nav-item ${activeTab === 'timeline' ? 'active' : ''}`}
+            onClick={() => { setActiveTab('timeline'); setSidebarOpen(false); }}
+          >
+            <span className="sidebar-nav-icon">⏱️</span>
+            <span>Timeline</span>
+          </div>
+          <div 
+            className={`sidebar-nav-item ${activeTab === 'repetidos' ? 'active' : ''}`}
+            onClick={() => { setActiveTab('repetidos'); setSidebarOpen(false); }}
+          >
+            <span className="sidebar-nav-icon">🔄</span>
+            <span>Repetidos ({totalRepetidos})</span>
+          </div>
+        </div>
+
+        <div className="sidebar-footer">
+          <div style={{marginBottom: '15px', fontSize: '0.9rem', color: 'var(--text-dim)', fontWeight: '600'}}>
+            Tema
+          </div>
+          <div className="theme-toggle">
+            <button 
+              className={`theme-toggle-btn ${theme === 'estadio' ? 'active' : ''}`}
+              onClick={() => setTheme('estadio')}
+            >
+              Estadio
+            </button>
+            <button 
+              className={`theme-toggle-btn ${theme === 'dark' ? 'active' : ''}`}
+              onClick={() => setTheme('dark')}
+            >
+              Noche
+            </button>
+            <button 
+              className={`theme-toggle-btn ${theme === 'light' ? 'active' : ''}`}
+              onClick={() => setTheme('light')}
+            >
+              Día
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="app-container">
+        {/* Hero Header */}
+        <div className="hero-header">
+          <div className="grass-texture"></div>
+          <div className="field-lines"></div>
+          <div className="hero-content">
+            <div className="hero-badge">⚽</div>
+            <h1 className="hero-title">Adrenalyn XL</h1>
+            <p className="hero-subtitle">LaLiga EA Sports 2025-26</p>
+            <div className="hero-stats-row">
+              <div className="hero-stat">
+                <div className="hero-stat-value">{totalCartas}</div>
+                <div className="hero-stat-label">Total</div>
+              </div>
+              <div className="hero-stat">
+                <div className="hero-stat-value">{progresoTotal}%</div>
+                <div className="hero-stat-label">Completado</div>
+              </div>
+              <div className="hero-stat">
+                <div className="hero-stat-value">{totalRepetidos}</div>
+                <div className="hero-stat-label">Repetidos</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="content-wrapper">
+          {/* Stats Grid */}
+          <div className="stats-grid">
+            <div className="stat-card">
+              <span className="stat-icon">🎯</span>
+              <div className="stat-label">Total Cartas</div>
+              <div className="stat-value">{totalCartas}</div>
+            </div>
+
+            <div className="stat-card">
+              <span className="stat-icon">✅</span>
+              <div className="stat-label">Coleccionadas</div>
+              <div className="stat-value" style={{color: 'var(--ea-green)'}}>{totalTengo}</div>
+              <div className="stat-progress">
+                <div className="stat-progress-bar" style={{width: `${progresoTotal}%`}}></div>
+              </div>
+            </div>
+
+            <div className="stat-card">
+              <span className="stat-icon">🔍</span>
+              <div className="stat-label">Por Conseguir</div>
+              <div className="stat-value" style={{color: 'var(--laliga-orange)'}}>{totalFaltan}</div>
+            </div>
+
+            <div className="stat-card">
+              <span className="stat-icon">🔄</span>
+              <div className="stat-label">Repetidos</div>
+              <div className="stat-value" style={{color: 'var(--warning)'}}>{totalRepetidos}</div>
+            </div>
+          </div>
+
+          {/* Export Section */}
+          <div className="export-section">
+            <button className="export-btn" onClick={exportarFaltantes}>
+              <span>📥 Exportar Faltantes</span>
+            </button>
+            <button className="export-btn" onClick={exportarRepetidos}>
+              <span>📥 Exportar Repetidos</span>
+            </button>
+            <button className="export-btn" onClick={exportarIntercambios}>
+              <span>📥 Lista Intercambios</span>
+            </button>
+          </div>
+
+          {/* Dashboard View */}
+          {activeTab === 'dashboard' && (
+            <div>
+              {/* Gráficos */}
+              <div className="charts-grid">
+                <div className="chart-card">
+                  <div className="chart-card-title">Progreso General</div>
+                  <canvas ref={chartProgressRef} className="chart-canvas"></canvas>
+                </div>
+                <div className="chart-card">
+                  <div className="chart-card-title">Progreso por Categoría</div>
+                  <canvas ref={chartCategoriesRef} className="chart-canvas"></canvas>
+                </div>
+              </div>
+
+              {/* Calculadora */}
+              <div className="progress-calculator">
+                <div className="calculator-title">🎯 Calculadora de Progreso</div>
+                <div className="calculator-inputs">
+                  <label style={{color: 'var(--text-dim)', fontWeight: '600'}}>
+                    Objetivo:
+                  </label>
+                  <input 
+                    type="number" 
+                    className="calculator-input"
+                    value={targetPercentage}
+                    onChange={(e) => setTargetPercentage(Math.max(0, Math.min(100, e.target.value)))}
+                    min="0"
+                    max="100"
+                  />
+                  <span style={{color: 'var(--text-dim)', fontWeight: '600'}}>%</span>
+                </div>
+                <div className="calculator-result">
+                  <div className="calculator-result-text">
+                    Para llegar al {targetPercentage}% necesitas conseguir:
+                  </div>
+                  <div className="calculator-result-value">
+                    {cartasNecesarias} cartas
+                  </div>
+                </div>
+              </div>
+
+              {/* Categorías */}
+              {data.resumen.filter(cat => cat.categoria !== 'TOTAL COLECCIÓN').map((cat, idx) => (
+                <div key={idx} className="category-section">
+                  <div className="category-header">
+                    <div className="category-title">{cat.categoria}</div>
+                    <div className="category-stats">
+                      <div className="category-stat">
+                        <div className="category-stat-value">{cat.tengo}</div>
+                        <div className="category-stat-label">Tengo</div>
+                      </div>
+                      <div className="category-stat">
+                        <div className="category-stat-value" style={{color: 'var(--laliga-orange)'}}>{cat.faltan}</div>
+                        <div className="category-stat-label">Faltan</div>
+                      </div>
+                      <div className="category-stat">
+                        <div className="category-stat-value" style={{color: 'var(--warning)'}}>
+                          {(cat.progreso * 100).toFixed(0)}%
+                        </div>
+                        <div className="category-stat-label">Progreso</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="stat-progress">
+                    <div className="stat-progress-bar" style={{width: `${cat.progreso * 100}%`}}></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Timeline View */}
+          {activeTab === 'timeline' && (
+            <div className="timeline-section">
+              <div className="category-header">
+                <div className="category-title">⏱️ Historial de Cartas</div>
+              </div>
+              <div className="timeline">
+                {timelineData.map((item, idx) => (
+                  <div key={idx} className="timeline-item">
+                    <div className="timeline-content">
+                      <div className="timeline-date">{item.fecha}</div>
+                      <div className="timeline-cards">
+                        {item.cartas.map(carta => (
+                          <div key={carta.numero} className="timeline-card-mini">
+                            #{carta.numero} {carta.nombre}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="timeline-dot"></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Otras vistas (Colección, Equipos, Estadísticas, Repetidos) - igual que V2 */}
+          {activeTab === 'coleccion' && (
+            <div>
+              <div className="filter-bar" style={{marginTop: '20px'}}>
+                <select className="filter-select" value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
+                  {categorias.map(cat => <option key={cat} value={cat}>{cat}</option>)}
+                </select>
+                <select className="filter-select" value={filterEquipo} onChange={(e) => setFilterEquipo(e.target.value)}>
+                  <option value="todos">Todos los equipos</option>
+                  {data.equipos.map(eq => <option key={eq} value={eq}>{eq}</option>)}
+                </select>
+                <input type="text" className="search-input" placeholder="🔍 Buscar..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+              </div>
+              <div className="cards-grid" style={{marginTop: '20px'}}>
+                {cartasFiltradas.map(carta => (
+                  <div key={`${carta.numero}-${carta.categoria || 'reg'}`} className={`card ${carta.tengo ? 'owned' : ''} ${carta.repetidos > 0 ? 'repeated' : ''}`}>
+                    <div className="card-number">#{carta.numero}</div>
+                    <div className="card-name">{carta.nombre}</div>
+                    <div className="card-team">{carta.equipo}</div>
+                    <div className="card-status">
+                      <span className={`status-badge ${carta.tengo ? 'owned' : 'missing'}`}>
+                        {carta.tengo ? '✓ Tengo' : 'Falta'}
+                      </span>
+                      {carta.repetidos > 0 && <span className="repeated-count">x{carta.repetidos}</span>}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Resto de vistas igual que V2... */}
+        </div>
+      </div>
+    </>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
+</html>
