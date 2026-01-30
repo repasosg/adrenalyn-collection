@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "ultima_actualizacion": "2026-01-29T19:06:09.688300",
+    "ultima_actualizacion": "2026-01-30T19:08:35.612711",
     "version": "2.0"
   },
   "resumen": [
@@ -21,9 +21,9 @@
     {
       "categoria": "VAMOS",
       "total": 20,
-      "tengo": 9,
-      "faltan": 11,
-      "progreso": 0.45
+      "tengo": 10,
+      "faltan": 10,
+      "progreso": 0.5
     },
     {
       "categoria": "Guantes de Oro",
@@ -63,9 +63,9 @@
     {
       "categoria": "Super Cracks",
       "total": 26,
-      "tengo": 14,
-      "faltan": 12,
-      "progreso": 0.5384615385
+      "tengo": 15,
+      "faltan": 11,
+      "progreso": 0.5769230769
     },
     {
       "categoria": "CARTAS TOP",
@@ -77,9 +77,9 @@
     {
       "categoria": "TOTAL COLECCIÓN",
       "total": 498,
-      "tengo": 300,
-      "faltan": 198,
-      "progreso": 0.6024096386
+      "tengo": 302,
+      "faltan": 196,
+      "progreso": 0.6064257028
     }
   ],
   "regulares": [
@@ -3130,7 +3130,7 @@
         "numero": "376",
         "nombre": "RAYO VALLECANO",
         "equipo": "¡VAMOS!",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "377",
@@ -3628,7 +3628,7 @@
         "numero": "457",
         "nombre": "COURTOIS",
         "equipo": "REAL MADRID",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "458",
