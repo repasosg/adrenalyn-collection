@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "ultima_actualizacion": "2026-01-31T19:41:46.402184",
+    "ultima_actualizacion": "2026-02-04T17:51:01.055075",
     "version": "2.0"
   },
   "resumen": [
@@ -207,7 +207,7 @@
       "nombre": "MARIANO",
       "equipo": "D. ALAVÉS",
       "tengo": true,
-      "repetidos": 2
+      "repetidos": 1
     },
     {
       "numero": "19.0",
@@ -529,7 +529,7 @@
       "nombre": "GAVI",
       "equipo": "FC BARCELONA",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": "65.0",
@@ -2627,7 +2627,7 @@
       "numero": "18",
       "nombre": "MARIANO",
       "equipo": "D. ALAVÉS",
-      "copias": 2
+      "copias": 1
     },
     {
       "numero": "19",
@@ -2657,12 +2657,6 @@
       "numero": "49",
       "nombre": "ALMADA",
       "equipo": "ATLÉTICO DE MADRID",
-      "copias": 1
-    },
-    {
-      "numero": "64",
-      "nombre": "GAVI",
-      "equipo": "FC BARCELONA",
       "copias": 1
     },
     {
