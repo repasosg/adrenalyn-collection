@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "ultima_actualizacion": "2026-02-04T17:51:01.055075",
+    "ultima_actualizacion": "2026-02-04T19:30:45.401279",
     "version": "2.0"
   },
   "resumen": [
     {
       "categoria": "REGULARES",
       "total": 360,
-      "tengo": 242,
-      "faltan": 118,
-      "progreso": 0.6722222222
+      "tengo": 249,
+      "faltan": 111,
+      "progreso": 0.6916666667
     },
     {
       "categoria": "ESTADIOS",
@@ -21,9 +21,9 @@
     {
       "categoria": "VAMOS",
       "total": 20,
-      "tengo": 11,
-      "faltan": 9,
-      "progreso": 0.55
+      "tengo": 12,
+      "faltan": 8,
+      "progreso": 0.6
     },
     {
       "categoria": "Guantes de Oro",
@@ -77,9 +77,9 @@
     {
       "categoria": "TOTAL COLECCIÓN",
       "total": 498,
-      "tengo": 327,
-      "faltan": 171,
-      "progreso": 0.656626506
+      "tengo": 335,
+      "faltan": 163,
+      "progreso": 0.6726907631
     }
   ],
   "regulares": [
@@ -276,7 +276,7 @@
       "numero": "28.0",
       "nombre": "JAUREGIZAR",
       "equipo": "ATHLETIC CLUB",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -395,7 +395,7 @@
       "numero": "45.0",
       "nombre": "KOKE",
       "equipo": "ATLÉTICO DE MADRID",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -626,7 +626,7 @@
       "numero": "78.0",
       "nombre": "DIEGO LLORENTE",
       "equipo": "REAL BETIS",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -900,7 +900,7 @@
       "nombre": "FEDE REDONDO",
       "equipo": "ELCHE CF",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "118.0",
@@ -1109,7 +1109,7 @@
       "numero": "147.0",
       "nombre": "LETACEK",
       "equipo": "GETAFE CF",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -1306,7 +1306,7 @@
       "nombre": "YÁSER ASPRILLA",
       "equipo": "GIRONA FC",
       "tengo": true,
-      "repetidos": 2
+      "repetidos": 3
     },
     {
       "numero": "176.0",
@@ -1558,7 +1558,7 @@
       "nombre": "GÜLER",
       "equipo": "REAL MADRID",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "212.0",
@@ -1593,7 +1593,7 @@
       "nombre": "VINÍCIUS",
       "equipo": "REAL MADRID",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 2
     },
     {
       "numero": "217.0",
@@ -1656,7 +1656,7 @@
       "nombre": "MOJICA",
       "equipo": "RCD MALLORCA",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "226.0",
@@ -1740,7 +1740,7 @@
       "nombre": "AITOR FERNÁNDEZ",
       "equipo": "CA OSASUNA",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 2
     },
     {
       "numero": "238.0",
@@ -1844,7 +1844,7 @@
       "numero": "252.0",
       "nombre": "BECKER",
       "equipo": "CA OSASUNA",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -2062,7 +2062,7 @@
       "nombre": "PEDRO DÍAZ",
       "equipo": "RAYO VALLECANO",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "284.0",
@@ -2096,7 +2096,7 @@
       "numero": "288.0",
       "nombre": "ALEMAO",
       "equipo": "RAYO VALLECANO",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -2153,7 +2153,7 @@
       "nombre": "SERGIO GÓMEZ",
       "equipo": "REAL SOCIEDAD",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "297.0",
@@ -2265,7 +2265,7 @@
       "nombre": "AZPILICUETA",
       "equipo": "SEVILLA FC",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "313.0",
@@ -2328,7 +2328,7 @@
       "nombre": "EJUKE",
       "equipo": "SEVILLA FC",
       "tengo": true,
-      "repetidos": 2
+      "repetidos": 3
     },
     {
       "numero": "322.0",
@@ -2370,7 +2370,7 @@
       "nombre": "DIMITRIEVSKI",
       "equipo": "VALENCIA CF",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "328.0",
@@ -2447,7 +2447,7 @@
       "nombre": "LUIS RIOJA",
       "equipo": "VALENCIA CF",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 2
     },
     {
       "numero": "339.0",
@@ -2593,7 +2593,7 @@
       "numero": "359.0",
       "nombre": "OLUWASEYI",
       "equipo": "VILLARREAL CF",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -2750,6 +2750,12 @@
       "copias": 1
     },
     {
+      "numero": "117",
+      "nombre": "FEDE REDONDO",
+      "equipo": "ELCHE CF",
+      "copias": 1
+    },
+    {
       "numero": "121",
       "nombre": "MARC AGUADO",
       "equipo": "ELCHE CF",
@@ -2807,7 +2813,7 @@
       "numero": "175",
       "nombre": "YÁSER ASPRILLA",
       "equipo": "GIRONA FC",
-      "copias": 2
+      "copias": 3
     },
     {
       "numero": "202",
@@ -2822,6 +2828,12 @@
       "copias": 1
     },
     {
+      "numero": "211",
+      "nombre": "GÜLER",
+      "equipo": "REAL MADRID",
+      "copias": 1
+    },
+    {
       "numero": "213",
       "nombre": "RODRYGO",
       "equipo": "REAL MADRID",
@@ -2831,11 +2843,17 @@
       "numero": "216",
       "nombre": "VINÍCIUS",
       "equipo": "REAL MADRID",
-      "copias": 1
+      "copias": 2
     },
     {
       "numero": "222",
       "nombre": "VALJENT",
+      "equipo": "RCD MALLORCA",
+      "copias": 1
+    },
+    {
+      "numero": "225",
+      "nombre": "MOJICA",
       "equipo": "RCD MALLORCA",
       "copias": 1
     },
@@ -2861,7 +2879,7 @@
       "numero": "237",
       "nombre": "AITOR FERNÁNDEZ",
       "equipo": "CA OSASUNA",
-      "copias": 1
+      "copias": 2
     },
     {
       "numero": "250",
@@ -2906,8 +2924,20 @@
       "copias": 2
     },
     {
+      "numero": "283",
+      "nombre": "PEDRO DÍAZ",
+      "equipo": "RAYO VALLECANO",
+      "copias": 1
+    },
+    {
       "numero": "295",
       "nombre": "CALETA-CAR",
+      "equipo": "REAL SOCIEDAD",
+      "copias": 1
+    },
+    {
+      "numero": "296",
+      "nombre": "SERGIO GÓMEZ",
       "equipo": "REAL SOCIEDAD",
       "copias": 1
     },
@@ -2924,6 +2954,12 @@
       "copias": 1
     },
     {
+      "numero": "312",
+      "nombre": "AZPILICUETA",
+      "equipo": "SEVILLA FC",
+      "copias": 1
+    },
+    {
       "numero": "313",
       "nombre": "KIKE SALAS",
       "equipo": "SEVILLA FC",
@@ -2933,7 +2969,7 @@
       "numero": "321",
       "nombre": "EJUKE",
       "equipo": "SEVILLA FC",
-      "copias": 2
+      "copias": 3
     },
     {
       "numero": "323",
@@ -2944,6 +2980,12 @@
     {
       "numero": "325",
       "nombre": "ESCUDO",
+      "equipo": "VALENCIA CF",
+      "copias": 1
+    },
+    {
+      "numero": "327",
+      "nombre": "DIMITRIEVSKI",
       "equipo": "VALENCIA CF",
       "copias": 1
     },
@@ -2969,7 +3011,7 @@
       "numero": "338",
       "nombre": "LUIS RIOJA",
       "equipo": "VALENCIA CF",
-      "copias": 1
+      "copias": 2
     },
     {
       "numero": "343",
@@ -3026,6 +3068,12 @@
       "copias": 1
     },
     {
+      "numero": "404",
+      "nombre": "LISO",
+      "equipo": "GETAFE CF",
+      "copias": 1
+    },
+    {
       "numero": "413",
       "nombre": "VÍCTOR MUÑOZ",
       "equipo": "CA OSASUNA",
@@ -3062,6 +3110,12 @@
       "copias": 1
     },
     {
+      "numero": "436",
+      "nombre": "CARLOS SOLER",
+      "equipo": "REAL SOCIEDAD",
+      "copias": 1
+    },
+    {
       "numero": "439",
       "nombre": "ALEXIS SÁNCHEZ",
       "equipo": "SEVILLA FC",
@@ -3090,6 +3144,12 @@
       "nombre": "NICO WILLIAMS",
       "equipo": "BALÓN DE ORO (ATHLETIC)",
       "copias": 2
+    },
+    {
+      "numero": "477",
+      "nombre": "CARD INVENCIBLE",
+      "equipo": "ÚNICA",
+      "copias": 1
     }
   ],
   "especiales": {
@@ -3256,7 +3316,7 @@
         "numero": "367",
         "nombre": "ELCHE CF",
         "equipo": "¡VAMOS!",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "368",
