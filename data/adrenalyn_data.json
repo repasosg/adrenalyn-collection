@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "ultima_actualizacion": "2026-02-05T19:28:11.567946",
+    "ultima_actualizacion": "2026-02-06T13:23:33.230230",
     "version": "2.0"
   },
   "resumen": [
@@ -361,7 +361,7 @@
       "nombre": "MARCOS LLORENTE",
       "equipo": "ATLÉTICO DE MADRID",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "41.0",
@@ -1299,7 +1299,7 @@
       "nombre": "IVÁN MARTÍN",
       "equipo": "GIRONA FC",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "175.0",
@@ -2111,7 +2111,7 @@
       "nombre": "REMIRO",
       "equipo": "REAL SOCIEDAD",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "291.0",
@@ -2654,6 +2654,12 @@
       "copias": 1
     },
     {
+      "numero": "40",
+      "nombre": "MARCOS LLORENTE",
+      "equipo": "ATLÉTICO DE MADRID",
+      "copias": 1
+    },
+    {
       "numero": "42",
       "nombre": "LENGLET",
       "equipo": "ATLÉTICO DE MADRID",
@@ -2828,6 +2834,12 @@
       "copias": 1
     },
     {
+      "numero": "174",
+      "nombre": "IVÁN MARTÍN",
+      "equipo": "GIRONA FC",
+      "copias": 1
+    },
+    {
       "numero": "175",
       "nombre": "YÁSER ASPRILLA",
       "equipo": "GIRONA FC",
@@ -2969,6 +2981,12 @@
       "numero": "286",
       "nombre": "CAMELLO",
       "equipo": "RAYO VALLECANO",
+      "copias": 1
+    },
+    {
+      "numero": "290",
+      "nombre": "REMIRO",
+      "equipo": "REAL SOCIEDAD",
       "copias": 1
     },
     {
