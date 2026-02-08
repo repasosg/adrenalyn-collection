@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "ultima_actualizacion": "2026-02-06T13:23:33.230230",
+    "ultima_actualizacion": "2026-02-08T08:15:25.203554",
     "version": "2.0"
   },
   "resumen": [
     {
       "categoria": "REGULARES",
       "total": 360,
-      "tengo": 252,
-      "faltan": 108,
-      "progreso": 0.7
+      "tengo": 255,
+      "faltan": 105,
+      "progreso": 0.7083333333
     },
     {
       "categoria": "ESTADIOS",
@@ -56,16 +56,16 @@
     {
       "categoria": "Protas",
       "total": 18,
-      "tengo": 9,
-      "faltan": 9,
-      "progreso": 0.5
+      "tengo": 10,
+      "faltan": 8,
+      "progreso": 0.5555555556
     },
     {
       "categoria": "Super Cracks",
       "total": 26,
-      "tengo": 15,
-      "faltan": 11,
-      "progreso": 0.5769230769
+      "tengo": 16,
+      "faltan": 10,
+      "progreso": 0.6153846154
     },
     {
       "categoria": "CARTAS TOP",
@@ -77,9 +77,9 @@
     {
       "categoria": "TOTAL COLECCIÓN",
       "total": 498,
-      "tengo": 339,
-      "faltan": 159,
-      "progreso": 0.6807228916
+      "tengo": 344,
+      "faltan": 154,
+      "progreso": 0.6907630522
     }
   ],
   "regulares": [
@@ -94,7 +94,7 @@
       "numero": "2.0",
       "nombre": "SIVERA",
       "equipo": "D. ALAVÉS",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -613,7 +613,7 @@
       "nombre": "BELLERÍN",
       "equipo": "REAL BETIS",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "77.0",
@@ -745,7 +745,7 @@
       "numero": "95.0",
       "nombre": "JAVI RODRÍGUEZ",
       "equipo": "RC CELTA",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -865,7 +865,7 @@
       "nombre": "ÁLVARO NÚÑEZ",
       "equipo": "ELCHE CF",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "113.0",
@@ -1152,7 +1152,7 @@
       "nombre": "DIEGO RICO",
       "equipo": "GETAFE CF",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "154.0",
@@ -1313,7 +1313,7 @@
       "nombre": "JOEL ROCA",
       "equipo": "GIRONA FC",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "177.0",
@@ -1495,7 +1495,7 @@
       "nombre": "CARVAJAL",
       "equipo": "REAL MADRID",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 2
     },
     {
       "numero": "203.0",
@@ -1810,7 +1810,7 @@
       "nombre": "RUBÉN GARCÍA",
       "equipo": "CA OSASUNA",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "248.0",
@@ -1837,7 +1837,7 @@
       "numero": "251.0",
       "nombre": "BUDIMIR",
       "equipo": "CA OSASUNA",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -1866,7 +1866,7 @@
       "nombre": "MOLDOVAN",
       "equipo": "REAL OVIEDO",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "256.0",
@@ -2690,6 +2690,12 @@
       "copias": 2
     },
     {
+      "numero": "76",
+      "nombre": "BELLERÍN",
+      "equipo": "REAL BETIS",
+      "copias": 1
+    },
+    {
       "numero": "81",
       "nombre": "JUNIOR",
       "equipo": "REAL BETIS",
@@ -2762,6 +2768,12 @@
       "copias": 1
     },
     {
+      "numero": "112",
+      "nombre": "ÁLVARO NÚÑEZ",
+      "equipo": "ELCHE CF",
+      "copias": 1
+    },
+    {
       "numero": "115",
       "nombre": "AFFENGRUBER",
       "equipo": "ELCHE CF",
@@ -2822,6 +2834,12 @@
       "copias": 1
     },
     {
+      "numero": "153",
+      "nombre": "DIEGO RICO",
+      "equipo": "GETAFE CF",
+      "copias": 1
+    },
+    {
       "numero": "163",
       "nombre": "ESCUDO",
       "equipo": "GIRONA FC",
@@ -2846,6 +2864,12 @@
       "copias": 3
     },
     {
+      "numero": "176",
+      "nombre": "JOEL ROCA",
+      "equipo": "GIRONA FC",
+      "copias": 1
+    },
+    {
       "numero": "177",
       "nombre": "TSYGANKOV",
       "equipo": "GIRONA FC",
@@ -2855,7 +2879,7 @@
       "numero": "202",
       "nombre": "CARVAJAL",
       "equipo": "REAL MADRID",
-      "copias": 1
+      "copias": 2
     },
     {
       "numero": "209",
@@ -2918,6 +2942,12 @@
       "copias": 2
     },
     {
+      "numero": "247",
+      "nombre": "RUBÉN GARCÍA",
+      "equipo": "CA OSASUNA",
+      "copias": 1
+    },
+    {
       "numero": "248",
       "nombre": "AIMAR OROZ",
       "equipo": "CA OSASUNA",
@@ -2927,6 +2957,12 @@
       "numero": "250",
       "nombre": "RAÚL GARCÍA",
       "equipo": "CA OSASUNA",
+      "copias": 1
+    },
+    {
+      "numero": "255",
+      "nombre": "MOLDOVAN",
+      "equipo": "REAL OVIEDO",
       "copias": 1
     },
     {
@@ -3800,7 +3836,7 @@
         "numero": "429",
         "nombre": "DOLAN",
         "equipo": "RCD ESPANYOL",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "430",
@@ -3982,7 +4018,7 @@
         "numero": "459",
         "nombre": "FEDE VALVERDE",
         "equipo": "REAL MADRID",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "460",
