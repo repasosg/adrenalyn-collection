@@ -1558,7 +1558,7 @@
       const [filterEquipo, setFilterEquipo] = useState('todos');
       const [filterEstado, setFilterEstado] = useState('todos');
       const [searchTerm, setSearchTerm] = useState('');
-      const [selectedCategory, setSelectedCategory] = useState('REGULARES');
+      const [selectedCategory, setSelectedCategory] = useState('TODAS');
       const [sidebarOpen, setSidebarOpen] = useState(false);
       const [theme, setTheme] = useState('estadio');
       const [targetPercentage, setTargetPercentage] = useState(100);
@@ -1742,9 +1742,13 @@
             (filterEstado === 'faltan' && !carta.tengo) ||
             (filterEstado === 'repetidos' && carta.repetidos > 0);
           const matchSearch = carta.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                             carta.equipo.toLowerCase().includes(searchTerm.toLowerCase());
+                             carta.equipo.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                             carta.numero.toString().includes(searchTerm);
           
           return matchEquipo && matchEstado && matchSearch;
+        }).sort((a, b) => {
+          // Ordenar por número de menor a mayor
+          return parseInt(a.numero) - parseInt(b.numero);
         });
       }, [data, filterEquipo, filterEstado, searchTerm, selectedCategory, todasLasCartas]);
 
@@ -2208,7 +2212,7 @@
                       <option value="todos">Todos los equipos</option>
                       {data.equipos.map(eq => <option key={eq} value={eq}>{eq}</option>)}
                     </select>
-                    <input type="text" className="search-input" placeholder="🔍 Buscar..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+                    <input type="text" className="search-input" placeholder="🔍 Buscar por nombre, equipo o número..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
                   </div>
                   <div className="filter-chips">
                     <div className={`chip ${filterEstado === 'todos' ? 'active' : ''}`} onClick={() => setFilterEstado('todos')}>
