@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "ultima_actualizacion": "2026-02-17T18:42:29.890672",
+    "ultima_actualizacion": "2026-02-18T09:53:51.811394",
     "version": "2.0"
   },
   "resumen": [
     {
       "categoria": "REGULARES",
       "total": 360,
-      "tengo": 309,
-      "faltan": 51,
-      "progreso": 0.8583333333
+      "tengo": 313,
+      "faltan": 47,
+      "progreso": 0.8694444444
     },
     {
       "categoria": "ESTADIOS",
@@ -21,9 +21,9 @@
     {
       "categoria": "VAMOS",
       "total": 20,
-      "tengo": 17,
-      "faltan": 3,
-      "progreso": 0.85
+      "tengo": 18,
+      "faltan": 2,
+      "progreso": 0.9
     },
     {
       "categoria": "Guantes de Oro",
@@ -49,16 +49,16 @@
     {
       "categoria": "Influencers",
       "total": 9,
-      "tengo": 6,
-      "faltan": 3,
-      "progreso": 0.6666666667
+      "tengo": 7,
+      "faltan": 2,
+      "progreso": 0.7777777778
     },
     {
       "categoria": "Protas",
       "total": 18,
-      "tengo": 16,
-      "faltan": 2,
-      "progreso": 0.8888888889
+      "tengo": 17,
+      "faltan": 1,
+      "progreso": 0.9444444444
     },
     {
       "categoria": "Super Cracks",
@@ -77,9 +77,9 @@
     {
       "categoria": "TOTAL COLECCIÓN",
       "total": 498,
-      "tengo": 434,
-      "faltan": 64,
-      "progreso": 0.8714859438
+      "tengo": 441,
+      "faltan": 57,
+      "progreso": 0.8855421687
     }
   ],
   "regulares": [
@@ -298,7 +298,7 @@
       "nombre": "SANCET",
       "equipo": "ATHLETIC CLUB",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "32.0",
@@ -354,7 +354,7 @@
       "nombre": "MUSSO",
       "equipo": "ATLÉTICO DE MADRID",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 2
     },
     {
       "numero": "40.0",
@@ -634,7 +634,7 @@
       "nombre": "NATAN",
       "equipo": "REAL BETIS",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "80.0",
@@ -970,7 +970,7 @@
       "nombre": "ESCUDO",
       "equipo": "RCD ESPANYOL",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 2
     },
     {
       "numero": "128.0",
@@ -1089,13 +1089,13 @@
       "nombre": "PERE MILLA",
       "equipo": "RCD ESPANYOL",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 2
     },
     {
       "numero": "145.0",
       "nombre": "ESCUDO",
       "equipo": "GETAFE CF",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -1116,7 +1116,7 @@
       "numero": "148.0",
       "nombre": "IGLESIAS",
       "equipo": "GETAFE CF",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -1858,7 +1858,7 @@
       "numero": "254.0",
       "nombre": "AARON ESCANDELL",
       "equipo": "REAL OVIEDO",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -1880,7 +1880,7 @@
       "nombre": "ERIC BAILLY",
       "equipo": "REAL OVIEDO",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "258.0",
@@ -1901,7 +1901,7 @@
       "nombre": "RAHIM ALHASSANE",
       "equipo": "REAL OVIEDO",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 2
     },
     {
       "numero": "261.0",
@@ -2195,7 +2195,7 @@
       "nombre": "KUBO",
       "equipo": "REAL SOCIEDAD",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 2
     },
     {
       "numero": "303.0",
@@ -2223,7 +2223,7 @@
       "nombre": "GUEDES",
       "equipo": "REAL SOCIEDAD",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "307.0",
@@ -2523,7 +2523,7 @@
       "numero": "349.0",
       "nombre": "RENATO VEIGA",
       "equipo": "VILLARREAL CF",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -2684,6 +2684,12 @@
       "copias": 1
     },
     {
+      "numero": "31",
+      "nombre": "SANCET",
+      "equipo": "ATHLETIC CLUB",
+      "copias": 1
+    },
+    {
       "numero": "33",
       "nombre": "WILLIAMS",
       "equipo": "ATHLETIC CLUB",
@@ -2705,7 +2711,7 @@
       "numero": "39",
       "nombre": "MUSSO",
       "equipo": "ATLÉTICO DE MADRID",
-      "copias": 1
+      "copias": 2
     },
     {
       "numero": "40",
@@ -2788,6 +2794,12 @@
     {
       "numero": "76",
       "nombre": "BELLERÍN",
+      "equipo": "REAL BETIS",
+      "copias": 1
+    },
+    {
+      "numero": "79",
+      "nombre": "NATAN",
       "equipo": "REAL BETIS",
       "copias": 1
     },
@@ -2909,7 +2921,7 @@
       "numero": "127",
       "nombre": "ESCUDO",
       "equipo": "RCD ESPANYOL",
-      "copias": 1
+      "copias": 2
     },
     {
       "numero": "128",
@@ -2957,7 +2969,7 @@
       "numero": "144",
       "nombre": "PERE MILLA",
       "equipo": "RCD ESPANYOL",
-      "copias": 1
+      "copias": 2
     },
     {
       "numero": "145",
@@ -3194,6 +3206,12 @@
       "copias": 2
     },
     {
+      "numero": "257",
+      "nombre": "ERIC BAILLY",
+      "equipo": "REAL OVIEDO",
+      "copias": 1
+    },
+    {
       "numero": "258",
       "nombre": "DAVID CARMO",
       "equipo": "REAL OVIEDO",
@@ -3209,7 +3227,7 @@
       "numero": "260",
       "nombre": "RAHIM ALHASSANE",
       "equipo": "REAL OVIEDO",
-      "copias": 1
+      "copias": 2
     },
     {
       "numero": "262",
@@ -3227,6 +3245,12 @@
       "numero": "269",
       "nombre": "FEDE VIÑAS",
       "equipo": "REAL OVIEDO",
+      "copias": 1
+    },
+    {
+      "numero": "271",
+      "nombre": "ESTADIO",
+      "equipo": "RAYO VALLECANO",
       "copias": 1
     },
     {
@@ -3304,6 +3328,12 @@
     {
       "numero": "302",
       "nombre": "KUBO",
+      "equipo": "REAL SOCIEDAD",
+      "copias": 2
+    },
+    {
+      "numero": "306",
+      "nombre": "GUEDES",
       "equipo": "REAL SOCIEDAD",
       "copias": 1
     },
@@ -3504,6 +3534,12 @@
       "nombre": "AGIRREZABALA",
       "equipo": "VALENCIA CF",
       "copias": 3
+    },
+    {
+      "numero": "389",
+      "nombre": "VIVIAN",
+      "equipo": "ATHLETIC CLUB",
+      "copias": 1
     },
     {
       "numero": "392",
@@ -3886,7 +3922,7 @@
         "numero": "378",
         "nombre": "SEVILLA FC",
         "equipo": "¡VAMOS!",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "379",
@@ -4146,7 +4182,7 @@
         "numero": "420",
         "nombre": "DARDER",
         "equipo": "RCD MALLORCA",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "421",
@@ -4274,7 +4310,7 @@
         "numero": "441",
         "nombre": "BUCHANAN",
         "equipo": "VILLARREAL CF",
-        "tengo": false
+        "tengo": true
       }
     ],
     "Super Cracks": [
