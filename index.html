@@ -926,12 +926,26 @@
       font-family: 'Teko', sans-serif;
       font-size: 1.4rem;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       line-height: 1.2;
       padding-right: 50px;
       color: var(--text);
+    }
+
+    .card-type-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--laliga-orange);
+      background: rgba(255, 140, 0, 0.12);
+      border: 1px solid rgba(255, 140, 0, 0.3);
+      border-radius: 6px;
+      padding: 2px 7px;
+      margin-bottom: 8px;
     }
 
     .card-team {
@@ -1712,6 +1726,16 @@
         return data.regulares.reduce((sum, card) => sum + card.repetidos, 0);
       }, [data]);
 
+      // Parsea el numero de carta: "1 Momentum" -> { num: "1", tipo: "Momentum" }
+      const parseNumero = (numero) => {
+        const str = String(numero);
+        const match = str.match(/^(\d+(?:\.\d+)?(?:\s*[Bb]is)?)(\s+.+)?$/);
+        if (match && match[2] && match[2].trim()) {
+          return { num: match[1].trim(), tipo: match[2].trim() };
+        }
+        return { num: str, tipo: null };
+      };
+
       const todasLasCartas = useMemo(() => {
         if (!data) return [];
         const cartas = [...data.regulares];
@@ -2231,8 +2255,7 @@
                   <div className="cards-grid">
                     {cartasFiltradas.map(carta => (
                       <div key={`${carta.numero}-${carta.categoria || 'reg'}`} className={`card ${carta.tengo ? 'owned' : ''} ${carta.repetidos > 0 ? 'repeated' : ''}`}>
-                        <div className="card-number">#{carta.numero}</div>
-                        <div className="card-name">{carta.nombre}</div>
+                        {(() => { const p = parseNumero(carta.numero); const label = carta.categoria === 'Ampliación' ? 'AMPLIACIÓN' : p.tipo; return (<><div className="card-number">#{p.num}</div><div className="card-name">{carta.nombre}</div>{label && <div className="card-type-label">{label}</div>}</>); })()}
                         <div className="card-team" style={{display: 'flex', alignItems: 'center', gap: '6px'}}>
                           {getTeamBadge(carta.equipo) && (
                             <img 
@@ -2400,8 +2423,7 @@
                       <div className="cards-grid">
                         {data.repetidos.map((carta, idx) => (
                           <div key={`${carta.numero}-${idx}`} className="card repeated">
-                            <div className="card-number">#{carta.numero}</div>
-                            <div className="card-name">{carta.nombre}</div>
+                            {(() => { const p = parseNumero(carta.numero); const label = carta.categoria === 'Ampliación' ? 'AMPLIACIÓN' : p.tipo; return (<><div className="card-number">#{p.num}</div><div className="card-name">{carta.nombre}</div>{label && <div className="card-type-label">{label}</div>}</>); })()}
                             <div className="card-team" style={{display: 'flex', alignItems: 'center', gap: '6px'}}>
                           {getTeamBadge(carta.equipo) && (
                             <img 
@@ -2449,8 +2471,7 @@
                       <div className="cards-grid">
                         {data.regulares.filter(c => c.repetidos > 0).map(carta => (
                           <div key={carta.numero} className="card repeated">
-                            <div className="card-number">#{carta.numero}</div>
-                            <div className="card-name">{carta.nombre}</div>
+                            {(() => { const p = parseNumero(carta.numero); const label = carta.categoria === 'Ampliación' ? 'AMPLIACIÓN' : p.tipo; return (<><div className="card-number">#{p.num}</div><div className="card-name">{carta.nombre}</div>{label && <div className="card-type-label">{label}</div>}</>); })()}
                             <div className="card-team" style={{display: 'flex', alignItems: 'center', gap: '6px'}}>
                           {getTeamBadge(carta.equipo) && (
                             <img 

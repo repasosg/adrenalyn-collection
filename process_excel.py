@@ -16,7 +16,7 @@ def process_excel_to_json(excel_path, output_path):
         df_resumen = pd.read_excel(excel_path, sheet_name='RESUMEN', header=1)
         resumen = []
         for _, row in df_resumen.iterrows():
-            if pd.notna(row.iloc[0]):
+            if pd.notna(row.iloc[0]) and str(row.iloc[0]) != 'TOTAL COLECCIÓN':
                 resumen.append({
                     'categoria': str(row.iloc[0]),
                     'total': int(row.iloc[1]) if pd.notna(row.iloc[1]) else 0,
@@ -50,10 +50,10 @@ def process_excel_to_json(excel_path, output_path):
                     'copias': int(row.iloc[3]) if pd.notna(row.iloc[3]) else 0
                 })
         
-        # 4. Obtener lista de equipos únicos
-        equipos = sorted(list(set([c['equipo'] for c in regulares if c['equipo']])))
+        # 4. Obtener lista de equipos únicos (se completa después de procesar especiales)
+        equipos_set = set(c['equipo'] for c in regulares if c['equipo'])
         
-        # 5. Procesar hojas especiales
+        # 5. Procesar hojas especiales (incluyendo AMPLIACION y ESPECIALES)
         especiales = {}
         hojas_especiales = [
             ('Estadios', 'Estadios'),
@@ -64,7 +64,9 @@ def process_excel_to_json(excel_path, output_path):
             ('Influencers (415–423)', 'Influencers'),
             ('Protas (424–441)', 'Protas'),
             ('Super Cracks (442–467)', 'Super Cracks'),
-            ('Cartas Top y Únicas (468–478)', 'Cartas Top y Únicas')
+            ('Cartas Top y Únicas (468–478)', 'Cartas Top y Únicas'),
+            ('AMPLIACION', 'Ampliación'),
+            ('ESPECIALES', 'Especiales'),
         ]
         
         for hoja_nombre, categoria_nombre in hojas_especiales:
@@ -80,8 +82,46 @@ def process_excel_to_json(excel_path, output_path):
                             'tengo': str(row.iloc[3]) == 'SI' if pd.notna(row.iloc[3]) else False
                         })
                 especiales[categoria_nombre] = cartas
+                # Añadir equipos únicos de esta categoría
+                for c in cartas:
+                    if c['equipo']:
+                        equipos_set.add(c['equipo'].upper())
+                
+                # Normalizar equipo a mayúsculas en las cartas para consistencia
+                for c in cartas:
+                    c['equipo'] = c['equipo'].upper()
+                
+                # Añadir al resumen si es Ampliación o Especiales (no están en la hoja RESUMEN)
+                if categoria_nombre in ['Ampliación', 'Especiales']:
+                    total = len(cartas)
+                    tengo = sum(1 for c in cartas if c['tengo'])
+                    faltan = total - tengo
+                    progreso = tengo / total if total > 0 else 0
+                    resumen.append({
+                        'categoria': categoria_nombre,
+                        'total': total,
+                        'tengo': tengo,
+                        'faltan': faltan,
+                        'progreso': progreso
+                    })
         
-        # 6. Construir el JSON final
+        # Finalizar lista de equipos únicos ordenada
+        equipos = sorted(list(equipos_set))
+        
+        # 6. Calcular TOTAL COLECCIÓN sumando todas las categorías
+        total_total = sum(r['total'] for r in resumen)
+        total_tengo = sum(r['tengo'] for r in resumen)
+        total_faltan = sum(r['faltan'] for r in resumen)
+        total_progreso = total_tengo / total_total if total_total > 0 else 0
+        resumen.append({
+            'categoria': 'TOTAL COLECCIÓN',
+            'total': total_total,
+            'tengo': total_tengo,
+            'faltan': total_faltan,
+            'progreso': total_progreso
+        })
+        
+        # 7. Construir el JSON final
         data = {
             'metadata': {
                 'ultima_actualizacion': datetime.now().isoformat(),
@@ -89,7 +129,7 @@ def process_excel_to_json(excel_path, output_path):
             },
             'resumen': resumen,
             'regulares': regulares,
-            'repetidos': repetidos_list,  # Nueva sección
+            'repetidos': repetidos_list,
             'especiales': especiales,
             'equipos': equipos
         }
@@ -105,6 +145,9 @@ def process_excel_to_json(excel_path, output_path):
         print(f"   - Cartas repetidas: {len(repetidos_list)}")
         print(f"   - Categorías especiales: {len(especiales)}")
         print(f"   - Equipos: {len(equipos)}")
+        for cat, cards in especiales.items():
+            tengo = sum(1 for c in cards if c['tengo'])
+            print(f"     · {cat}: {len(cards)} cartas ({tengo} tengo)")
         
         return True
         
@@ -118,7 +161,6 @@ if __name__ == "__main__":
     excel_file = "Checklist_Adrenalyn_XL_2025-26.xlsx"
     output_file = "data/adrenalyn_data.json"
     
-    # Crear directorio data si no existe
     import os
     os.makedirs('data', exist_ok=True)
     
