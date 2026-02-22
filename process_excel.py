@@ -91,19 +91,7 @@ def process_excel_to_json(excel_path, output_path):
                 for c in cartas:
                     c['equipo'] = c['equipo'].upper()
                 
-                # Añadir al resumen si es Ampliación o Especiales (no están en la hoja RESUMEN)
-                if categoria_nombre in ['Ampliación', 'Especiales']:
-                    total = len(cartas)
-                    tengo = sum(1 for c in cartas if c['tengo'])
-                    faltan = total - tengo
-                    progreso = tengo / total if total > 0 else 0
-                    resumen.append({
-                        'categoria': categoria_nombre,
-                        'total': total,
-                        'tengo': tengo,
-                        'faltan': faltan,
-                        'progreso': progreso
-                    })
+                # Ampliación y Especiales ya están en la hoja RESUMEN, no se añaden de nuevo
         
         # Finalizar lista de equipos únicos ordenada
         equipos = sorted(list(equipos_set))
