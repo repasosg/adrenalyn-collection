@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "ultima_actualizacion": "2026-02-22T19:23:28.811503",
+    "ultima_actualizacion": "2026-02-22T20:06:57.007117",
     "version": "2.0"
   },
   "resumen": [
@@ -69,10 +69,24 @@
     },
     {
       "categoria": "CARTAS TOP",
-      "total": 11,
+      "total": 26,
       "tengo": 15,
-      "faltan": -4,
-      "progreso": 1.363636364
+      "faltan": 11,
+      "progreso": 0.5769230769
+    },
+    {
+      "categoria": "Ampliación",
+      "total": 46,
+      "tengo": 28,
+      "faltan": 18,
+      "progreso": 0.6086956522
+    },
+    {
+      "categoria": "Especiales",
+      "total": 36,
+      "tengo": 9,
+      "faltan": 27,
+      "progreso": 0.25
     },
     {
       "categoria": "Ampliación",
@@ -90,10 +104,10 @@
     },
     {
       "categoria": "TOTAL COLECCIÓN",
-      "total": 580,
-      "tengo": 487,
-      "faltan": 93,
-      "progreso": 0.8396551724137931
+      "total": 677,
+      "tengo": 524,
+      "faltan": 153,
+      "progreso": 0.7740029542097489
     }
   ],
   "regulares": [
@@ -2626,12 +2640,6 @@
       "copias": 2
     },
     {
-      "numero": "1",
-      "nombre": "ESTADIO",
-      "equipo": "D. ALAVÉS",
-      "copias": 2
-    },
-    {
       "numero": "3",
       "nombre": "RAÚL FERNÁNDEZ",
       "equipo": "D. ALAVÉS",
@@ -2686,12 +2694,6 @@
       "copias": 3
     },
     {
-      "numero": "19",
-      "nombre": "ESTADIO",
-      "equipo": "ATHLETIC CLUB",
-      "copias": 2
-    },
-    {
       "numero": "21",
       "nombre": "PADILLA",
       "equipo": "ATHLETIC CLUB",
@@ -2737,12 +2739,6 @@
       "numero": "36",
       "nombre": "NICO WILLIAMS",
       "equipo": "ATHLETIC CLUB",
-      "copias": 1
-    },
-    {
-      "numero": "37",
-      "nombre": "ESTADIO",
-      "equipo": "ATLÉTICO DE MADRID",
       "copias": 1
     },
     {
@@ -2794,12 +2790,6 @@
       "copias": 1
     },
     {
-      "numero": "55",
-      "nombre": "ESTADIO",
-      "equipo": "FC BARCELONA",
-      "copias": 1
-    },
-    {
       "numero": "61",
       "nombre": "ARAÚJO",
       "equipo": "FC BARCELONA",
@@ -2832,12 +2822,6 @@
     {
       "numero": "73",
       "nombre": "ESCUDO",
-      "equipo": "REAL BETIS",
-      "copias": 1
-    },
-    {
-      "numero": "73",
-      "nombre": "ESTADIO",
       "equipo": "REAL BETIS",
       "copias": 1
     },
@@ -2950,12 +2934,6 @@
       "copias": 2
     },
     {
-      "numero": "109",
-      "nombre": "ESTADIO",
-      "equipo": "ELCHE CF",
-      "copias": 1
-    },
-    {
       "numero": "110",
       "nombre": "IÑAKI PEÑA",
       "equipo": "ELCHE CF",
@@ -3058,12 +3036,6 @@
       "copias": 1
     },
     {
-      "numero": "145",
-      "nombre": "ESTADIO",
-      "equipo": "GETAFE CF",
-      "copias": 1
-    },
-    {
       "numero": "146",
       "nombre": "DAVID SORIA",
       "equipo": "GETAFE CF",
@@ -3092,12 +3064,6 @@
       "nombre": "ESCUDO",
       "equipo": "GIRONA FC",
       "copias": 2
-    },
-    {
-      "numero": "163",
-      "nombre": "ESTADIO",
-      "equipo": "GIRONA FC",
-      "copias": 1
     },
     {
       "numero": "164",
@@ -3190,12 +3156,6 @@
       "copias": 2
     },
     {
-      "numero": "199",
-      "nombre": "ESTADIO",
-      "equipo": "REAL MADRID",
-      "copias": 2
-    },
-    {
       "numero": "202",
       "nombre": "CARVAJAL",
       "equipo": "REAL MADRID",
@@ -3274,12 +3234,6 @@
       "copias": 1
     },
     {
-      "numero": "217",
-      "nombre": "ESTADIO",
-      "equipo": "RCD MALLORCA",
-      "copias": 1
-    },
-    {
       "numero": "219",
       "nombre": "BERGSTRÖM",
       "equipo": "RCD MALLORCA",
@@ -3334,12 +3288,6 @@
       "copias": 2
     },
     {
-      "numero": "235",
-      "nombre": "ESTADIO",
-      "equipo": "CA OSASUNA",
-      "copias": 1
-    },
-    {
       "numero": "236",
       "nombre": "SERGIO HERRERA",
       "equipo": "CA OSASUNA",
@@ -3386,12 +3334,6 @@
       "nombre": "RAÚL GARCÍA",
       "equipo": "CA OSASUNA",
       "copias": 2
-    },
-    {
-      "numero": "253",
-      "nombre": "ESTADIO",
-      "equipo": "REAL OVIEDO",
-      "copias": 1
     },
     {
       "numero": "255",
@@ -3458,12 +3400,6 @@
       "nombre": "FEDE VIÑAS",
       "equipo": "REAL OVIEDO",
       "copias": 1
-    },
-    {
-      "numero": "271",
-      "nombre": "ESTADIO",
-      "equipo": "RAYO VALLECANO",
-      "copias": 2
     },
     {
       "numero": "277",
@@ -3664,12 +3600,6 @@
       "copias": 3
     },
     {
-      "numero": "325",
-      "nombre": "ESTADIO",
-      "equipo": "VALENCIA CF",
-      "copias": 1
-    },
-    {
       "numero": "326",
       "nombre": "AGIRREZABALA",
       "equipo": "VALENCIA CF",
@@ -3752,12 +3682,6 @@
       "nombre": "ESCUDO",
       "equipo": "VILLARREAL CF",
       "copias": 3
-    },
-    {
-      "numero": "343",
-      "nombre": "ESTADIO",
-      "equipo": "VILLARREAL CF",
-      "copias": 2
     },
     {
       "numero": "344",
@@ -4100,6 +4024,144 @@
       "nombre": "VINÍCIUS",
       "equipo": "BALÓN DE ORO (REAL MADRID)",
       "copias": 1
+    },
+    {
+      "numero": "3MN",
+      "nombre": "TRENT",
+      "equipo": "REAL MADRID",
+      "copias": 1
+    },
+    {
+      "numero": "5MN",
+      "nombre": "HACNKO",
+      "equipo": "ATLETICO DE MADRID",
+      "copias": 1
+    },
+    {
+      "numero": "7MN",
+      "nombre": "NICO GONZALEZ",
+      "equipo": "ATLETICO DE MADRID",
+      "copias": 1
+    },
+    {
+      "numero": "9MN",
+      "nombre": "AMRABAT",
+      "equipo": "REAL BETIS",
+      "copias": 2
+    },
+    {
+      "numero": "10MN",
+      "nombre": "MASTANTUONDO",
+      "equipo": "REAL MADRID",
+      "copias": 1
+    },
+    {
+      "numero": "11MN",
+      "nombre": "ALMADA",
+      "equipo": "ATLETICO DE MADRID",
+      "copias": 1
+    },
+    {
+      "numero": "225 Bis",
+      "nombre": "LATO",
+      "equipo": "RCD MALLORCA",
+      "copias": 1
+    },
+    {
+      "numero": "261 Bis",
+      "nombre": "EJARIA",
+      "equipo": "REAL OVIEDO",
+      "copias": 1
+    },
+    {
+      "numero": "1",
+      "nombre": "ESTADIO",
+      "equipo": "D. ALAVÉS",
+      "copias": 2
+    },
+    {
+      "numero": "19",
+      "nombre": "ESTADIO",
+      "equipo": "ATHLETIC CLUB",
+      "copias": 2
+    },
+    {
+      "numero": "37",
+      "nombre": "ESTADIO",
+      "equipo": "ATLÉTICO DE MADRID",
+      "copias": 1
+    },
+    {
+      "numero": "55",
+      "nombre": "ESTADIO",
+      "equipo": "FC BARCELONA",
+      "copias": 1
+    },
+    {
+      "numero": "73",
+      "nombre": "ESTADIO",
+      "equipo": "REAL BETIS",
+      "copias": 1
+    },
+    {
+      "numero": "109",
+      "nombre": "ESTADIO",
+      "equipo": "ELCHE CF",
+      "copias": 1
+    },
+    {
+      "numero": "145",
+      "nombre": "ESTADIO",
+      "equipo": "GETAFE CF",
+      "copias": 1
+    },
+    {
+      "numero": "163",
+      "nombre": "ESTADIO",
+      "equipo": "GIRONA FC",
+      "copias": 1
+    },
+    {
+      "numero": "199",
+      "nombre": "ESTADIO",
+      "equipo": "REAL MADRID",
+      "copias": 2
+    },
+    {
+      "numero": "217",
+      "nombre": "ESTADIO",
+      "equipo": "RCD MALLORCA",
+      "copias": 1
+    },
+    {
+      "numero": "235",
+      "nombre": "ESTADIO",
+      "equipo": "CA OSASUNA",
+      "copias": 1
+    },
+    {
+      "numero": "253",
+      "nombre": "ESTADIO",
+      "equipo": "REAL OVIEDO",
+      "copias": 1
+    },
+    {
+      "numero": "271",
+      "nombre": "ESTADIO",
+      "equipo": "RAYO VALLECANO",
+      "copias": 2
+    },
+    {
+      "numero": "325",
+      "nombre": "ESTADIO",
+      "equipo": "VALENCIA CF",
+      "copias": 1
+    },
+    {
+      "numero": "343",
+      "nombre": "ESTADIO",
+      "equipo": "VILLARREAL CF",
+      "copias": 2
     }
   ],
   "especiales": {
