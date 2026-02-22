@@ -89,25 +89,11 @@
       "progreso": 0.25
     },
     {
-      "categoria": "Ampliación",
-      "total": 46,
-      "tengo": 28,
-      "faltan": 18,
-      "progreso": 0.6086956521739131
-    },
-    {
-      "categoria": "Especiales",
-      "total": 36,
-      "tengo": 9,
-      "faltan": 27,
-      "progreso": 0.25
-    },
-    {
       "categoria": "TOTAL COLECCIÓN",
-      "total": 677,
-      "tengo": 524,
-      "faltan": 153,
-      "progreso": 0.7740029542097489
+      "total": 595,
+      "tengo": 487,
+      "faltan": 108,
+      "progreso": 0.8184873949579832
     }
   ],
   "regulares": [
