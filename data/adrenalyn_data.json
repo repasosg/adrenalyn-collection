@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "ultima_actualizacion": "2026-02-22T20:06:57.007117",
+    "ultima_actualizacion": "2026-02-25T16:38:29.880271",
     "version": "2.0"
   },
   "resumen": [
     {
       "categoria": "REGULARES",
       "total": 360,
-      "tengo": 319,
-      "faltan": 41,
-      "progreso": 0.8861111111
+      "tengo": 321,
+      "faltan": 39,
+      "progreso": 0.8916666667
     },
     {
       "categoria": "ESTADIOS",
@@ -70,9 +70,9 @@
     {
       "categoria": "CARTAS TOP",
       "total": 26,
-      "tengo": 15,
-      "faltan": 11,
-      "progreso": 0.5769230769
+      "tengo": 16,
+      "faltan": 10,
+      "progreso": 0.6153846154
     },
     {
       "categoria": "Ampliación",
@@ -91,9 +91,9 @@
     {
       "categoria": "TOTAL COLECCIÓN",
       "total": 595,
-      "tengo": 487,
-      "faltan": 108,
-      "progreso": 0.8184873949579832
+      "tengo": 490,
+      "faltan": 105,
+      "progreso": 0.8235294117647058
     }
   ],
   "regulares": [
@@ -347,7 +347,7 @@
       "nombre": "NICO WILLIAMS",
       "equipo": "ATHLETIC CLUB",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": "37.0",
@@ -361,7 +361,7 @@
       "nombre": "OBLAK",
       "equipo": "ATLÉTICO DE MADRID",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": "39.0",
@@ -514,7 +514,7 @@
       "numero": "60.0",
       "nombre": "ERIC GARCÍA",
       "equipo": "FC BARCELONA",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -536,7 +536,7 @@
       "nombre": "DE JONG",
       "equipo": "FC BARCELONA",
       "tengo": true,
-      "repetidos": 2
+      "repetidos": 1
     },
     {
       "numero": "64.0",
@@ -550,7 +550,7 @@
       "nombre": "PEDRI",
       "equipo": "FC BARCELONA",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": "66.0",
@@ -844,7 +844,7 @@
       "nombre": "BORJA IGLESIAS",
       "equipo": "RC CELTA",
       "tengo": false,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": "108.0",
@@ -1110,7 +1110,7 @@
       "nombre": "ESCUDO",
       "equipo": "GETAFE CF",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": "146.0",
@@ -1501,7 +1501,7 @@
       "numero": "201.0",
       "nombre": "LUNIN",
       "equipo": "REAL MADRID",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -1943,7 +1943,7 @@
       "nombre": "CAZORLA",
       "equipo": "REAL OVIEDO",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": "265.0",
@@ -2104,7 +2104,7 @@
       "nombre": "DE FRUTOS",
       "equipo": "RAYO VALLECANO",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": "288.0",
@@ -2722,18 +2722,6 @@
       "copias": 1
     },
     {
-      "numero": "36",
-      "nombre": "NICO WILLIAMS",
-      "equipo": "ATHLETIC CLUB",
-      "copias": 1
-    },
-    {
-      "numero": "38",
-      "nombre": "OBLAK",
-      "equipo": "ATLÉTICO DE MADRID",
-      "copias": 1
-    },
-    {
       "numero": "39",
       "nombre": "MUSSO",
       "equipo": "ATLÉTICO DE MADRID",
@@ -2784,12 +2772,6 @@
     {
       "numero": "63",
       "nombre": "DE JONG",
-      "equipo": "FC BARCELONA",
-      "copias": 2
-    },
-    {
-      "numero": "65",
-      "nombre": "PEDRI",
       "equipo": "FC BARCELONA",
       "copias": 1
     },
@@ -2908,12 +2890,6 @@
       "copias": 2
     },
     {
-      "numero": "107",
-      "nombre": "BORJA IGLESIAS",
-      "equipo": "RC CELTA",
-      "copias": 1
-    },
-    {
       "numero": "108",
       "nombre": "JUTGLÀ",
       "equipo": "RC CELTA",
@@ -3014,12 +2990,6 @@
       "nombre": "PERE MILLA",
       "equipo": "RCD ESPANYOL",
       "copias": 2
-    },
-    {
-      "numero": "145",
-      "nombre": "ESCUDO",
-      "equipo": "GETAFE CF",
-      "copias": 1
     },
     {
       "numero": "146",
@@ -3358,12 +3328,6 @@
       "copias": 1
     },
     {
-      "numero": "264",
-      "nombre": "CAZORLA",
-      "equipo": "REAL OVIEDO",
-      "copias": 1
-    },
-    {
       "numero": "265",
       "nombre": "ILIC",
       "equipo": "REAL OVIEDO",
@@ -3440,12 +3404,6 @@
       "nombre": "CAMELLO",
       "equipo": "RAYO VALLECANO",
       "copias": 2
-    },
-    {
-      "numero": "287",
-      "nombre": "DE FRUTOS",
-      "equipo": "RAYO VALLECANO",
-      "copias": 1
     },
     {
       "numero": "290",
@@ -3736,12 +3694,6 @@
       "copias": 1
     },
     {
-      "numero": "367",
-      "nombre": "ELCHE CF",
-      "equipo": "¡VAMOS!",
-      "copias": 1
-    },
-    {
       "numero": "369",
       "nombre": "GETAFE CF",
       "equipo": "¡VAMOS!",
@@ -3776,12 +3728,6 @@
       "nombre": "AGIRREZABALA",
       "equipo": "VALENCIA CF",
       "copias": 4
-    },
-    {
-      "numero": "389",
-      "nombre": "VIVIAN",
-      "equipo": "ATHLETIC CLUB",
-      "copias": 1
     },
     {
       "numero": "391",
@@ -3916,12 +3862,6 @@
       "copias": 1
     },
     {
-      "numero": "429",
-      "nombre": "DOLAN",
-      "equipo": "RCD ESPANYOL",
-      "copias": 1
-    },
-    {
       "numero": "436",
       "nombre": "CARLOS SOLER",
       "equipo": "REAL SOCIEDAD",
@@ -3958,12 +3898,6 @@
       "copias": 1
     },
     {
-      "numero": "454",
-      "nombre": "ISCO",
-      "equipo": "REAL BETIS",
-      "copias": 1
-    },
-    {
       "numero": "455",
       "nombre": "LO CELSO",
       "equipo": "REAL BETIS",
@@ -3979,24 +3913,12 @@
       "numero": "458",
       "nombre": "CARRERAS",
       "equipo": "REAL MADRID",
-      "copias": 2
-    },
-    {
-      "numero": "459",
-      "nombre": "FEDE VALVERDE",
-      "equipo": "REAL MADRID",
-      "copias": 1
+      "copias": 3
     },
     {
       "numero": "462",
       "nombre": "ISI",
       "equipo": "RAYO VALLECANO",
-      "copias": 1
-    },
-    {
-      "numero": "468",
-      "nombre": "CARD CHAMPIONS",
-      "equipo": "ÚNICA",
       "copias": 1
     },
     {
@@ -4018,28 +3940,10 @@
       "copias": 1
     },
     {
-      "numero": "5MN",
-      "nombre": "HACNKO",
-      "equipo": "ATLETICO DE MADRID",
-      "copias": 1
-    },
-    {
-      "numero": "7MN",
-      "nombre": "NICO GONZALEZ",
-      "equipo": "ATLETICO DE MADRID",
-      "copias": 1
-    },
-    {
       "numero": "9MN",
       "nombre": "AMRABAT",
       "equipo": "REAL BETIS",
       "copias": 2
-    },
-    {
-      "numero": "10MN",
-      "nombre": "MASTANTUONDO",
-      "equipo": "REAL MADRID",
-      "copias": 1
     },
     {
       "numero": "11MN",
@@ -4099,12 +4003,6 @@
       "numero": "145",
       "nombre": "ESTADIO",
       "equipo": "GETAFE CF",
-      "copias": 1
-    },
-    {
-      "numero": "163",
-      "nombre": "ESTADIO",
-      "equipo": "GIRONA FC",
       "copias": 1
     },
     {
@@ -5000,7 +4898,7 @@
         "numero": "1MN",
         "nombre": "VLACHODIMOS",
         "equipo": "SEVILLA FC",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "2MN",
