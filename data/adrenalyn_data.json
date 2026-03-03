@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "ultima_actualizacion": "2026-02-25T16:38:29.880271",
+    "ultima_actualizacion": "2026-03-03T17:49:30.330774",
     "version": "2.0"
   },
   "resumen": [
     {
       "categoria": "REGULARES",
       "total": 360,
-      "tengo": 321,
-      "faltan": 39,
-      "progreso": 0.8916666667
+      "tengo": 331,
+      "faltan": 29,
+      "progreso": 0.9194444444
     },
     {
       "categoria": "ESTADIOS",
@@ -28,9 +28,9 @@
     {
       "categoria": "Guantes de Oro",
       "total": 7,
-      "tengo": 5,
-      "faltan": 2,
-      "progreso": 0.7142857143
+      "tengo": 6,
+      "faltan": 1,
+      "progreso": 0.8571428571
     },
     {
       "categoria": "Kryptonita",
@@ -70,9 +70,9 @@
     {
       "categoria": "CARTAS TOP",
       "total": 26,
-      "tengo": 16,
-      "faltan": 10,
-      "progreso": 0.6153846154
+      "tengo": 17,
+      "faltan": 9,
+      "progreso": 0.6538461538
     },
     {
       "categoria": "Ampliación",
@@ -91,9 +91,9 @@
     {
       "categoria": "TOTAL COLECCIÓN",
       "total": 595,
-      "tengo": 490,
-      "faltan": 105,
-      "progreso": 0.8235294117647058
+      "tengo": 502,
+      "faltan": 93,
+      "progreso": 0.8436974789915966
     }
   ],
   "regulares": [
@@ -269,7 +269,7 @@
       "numero": "25.0",
       "nombre": "LAPORTE",
       "equipo": "ATHLETIC CLUB",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -353,7 +353,7 @@
       "numero": "37.0",
       "nombre": "ESCUDO",
       "equipo": "ATLÉTICO DE MADRID",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -1228,7 +1228,7 @@
       "numero": "162.0",
       "nombre": "COBA",
       "equipo": "GETAFE CF",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -1270,7 +1270,7 @@
       "numero": "168.0",
       "nombre": "VITOR REIS",
       "equipo": "GIRONA FC",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -1431,7 +1431,7 @@
       "numero": "191.0",
       "nombre": "PABLO MARTÍNEZ",
       "equipo": "LEVANTE UD",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -1620,7 +1620,7 @@
       "numero": "218.0",
       "nombre": "LEO ROMÁN",
       "equipo": "RCD MALLORCA",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -2117,7 +2117,7 @@
       "numero": "289.0",
       "nombre": "ESCUDO",
       "equipo": "REAL SOCIEDAD",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -2201,7 +2201,7 @@
       "numero": "301.0",
       "nombre": "BRAIS MÉNDEZ",
       "equipo": "REAL SOCIEDAD",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -2362,7 +2362,7 @@
       "numero": "324.0",
       "nombre": "ALEXIS SÁNCHEZ",
       "equipo": "SEVILLA FC",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -2614,7 +2614,7 @@
       "numero": "360.0",
       "nombre": "AYOZE",
       "equipo": "VILLARREAL CF",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     }
   ],
@@ -4328,7 +4328,7 @@
         "numero": "386",
         "nombre": "REMIRO",
         "equipo": "REAL SOCIEDAD",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "387",
@@ -4874,7 +4874,7 @@
         "numero": "475",
         "nombre": "BALÓN DE ORO EXCELLENCE",
         "equipo": "ÚNICA",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "476",
