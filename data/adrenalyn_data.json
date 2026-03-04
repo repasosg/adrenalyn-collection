@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "ultima_actualizacion": "2026-03-04T13:08:43.020258",
+    "ultima_actualizacion": "2026-03-04T19:56:18.830084",
     "version": "2.0"
   },
   "resumen": [
     {
       "categoria": "REGULARES",
       "total": 360,
-      "tengo": 334,
-      "faltan": 26,
-      "progreso": 0.9277777778
+      "tengo": 339,
+      "faltan": 21,
+      "progreso": 0.9416666667
     },
     {
       "categoria": "ESTADIOS",
@@ -70,9 +70,9 @@
     {
       "categoria": "CARTAS TOP",
       "total": 26,
-      "tengo": 17,
-      "faltan": 9,
-      "progreso": 0.6538461538
+      "tengo": 18,
+      "faltan": 8,
+      "progreso": 0.6923076923
     },
     {
       "categoria": "Ampliación",
@@ -91,9 +91,9 @@
     {
       "categoria": "TOTAL COLECCIÓN",
       "total": 595,
-      "tengo": 508,
-      "faltan": 87,
-      "progreso": 0.853781512605042
+      "tengo": 514,
+      "faltan": 81,
+      "progreso": 0.8638655462184874
     }
   ],
   "regulares": [
@@ -297,14 +297,14 @@
       "numero": "29.0",
       "nombre": "VESGA",
       "equipo": "ATHLETIC CLUB",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
       "numero": "30.0",
       "nombre": "UNAI GÓMEZ",
       "equipo": "ATHLETIC CLUB",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -339,7 +339,7 @@
       "numero": "35.0",
       "nombre": "GURUZETA",
       "equipo": "ATHLETIC CLUB",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -417,7 +417,7 @@
       "nombre": "BARRIOS",
       "equipo": "ATLÉTICO DE MADRID",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "47.0",
@@ -655,7 +655,7 @@
       "nombre": "VALENTÍN GÓMEZ",
       "equipo": "REAL BETIS",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "81.0",
@@ -1110,7 +1110,7 @@
       "nombre": "ESCUDO",
       "equipo": "GETAFE CF",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "146.0",
@@ -1137,7 +1137,7 @@
       "numero": "149.0",
       "nombre": "KIKO FEMENÍA",
       "equipo": "GETAFE CF",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -1229,7 +1229,7 @@
       "nombre": "COBA",
       "equipo": "GETAFE CF",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "163.0",
@@ -1271,7 +1271,7 @@
       "nombre": "VITOR REIS",
       "equipo": "GIRONA FC",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "169.0",
@@ -1432,7 +1432,7 @@
       "nombre": "PABLO MARTÍNEZ",
       "equipo": "LEVANTE UD",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "192.0",
@@ -1607,7 +1607,7 @@
       "nombre": "VINÍCIUS",
       "equipo": "REAL MADRID",
       "tengo": true,
-      "repetidos": 3
+      "repetidos": 2
     },
     {
       "numero": "217.0",
@@ -1621,7 +1621,7 @@
       "nombre": "LEO ROMÁN",
       "equipo": "RCD MALLORCA",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "219.0",
@@ -1873,7 +1873,7 @@
       "nombre": "AARON ESCANDELL",
       "equipo": "REAL OVIEDO",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "255.0",
@@ -1901,7 +1901,7 @@
       "nombre": "DAVID CARMO",
       "equipo": "REAL OVIEDO",
       "tengo": true,
-      "repetidos": 2
+      "repetidos": 1
     },
     {
       "numero": "259.0",
@@ -2041,7 +2041,7 @@
       "nombre": "PEP CHAVARRÍA",
       "equipo": "RAYO VALLECANO",
       "tengo": true,
-      "repetidos": 3
+      "repetidos": 2
     },
     {
       "numero": "279.0",
@@ -2229,7 +2229,7 @@
       "numero": "305.0",
       "nombre": "ÓSKARSSON",
       "equipo": "REAL SOCIEDAD",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -2286,7 +2286,7 @@
       "nombre": "KIKE SALAS",
       "equipo": "SEVILLA FC",
       "tengo": true,
-      "repetidos": 2
+      "repetidos": 1
     },
     {
       "numero": "314.0",
@@ -2342,7 +2342,7 @@
       "nombre": "EJUKE",
       "equipo": "SEVILLA FC",
       "tengo": true,
-      "repetidos": 3
+      "repetidos": 2
     },
     {
       "numero": "322.0",
@@ -2363,14 +2363,14 @@
       "nombre": "ALEXIS SÁNCHEZ",
       "equipo": "SEVILLA FC",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     },
     {
       "numero": "325.0",
       "nombre": "ESCUDO",
       "equipo": "VALENCIA CF",
       "tengo": true,
-      "repetidos": 3
+      "repetidos": 2
     },
     {
       "numero": "326.0",
@@ -2391,7 +2391,7 @@
       "nombre": "FOULQUIER",
       "equipo": "VALENCIA CF",
       "tengo": true,
-      "repetidos": 2
+      "repetidos": 1
     },
     {
       "numero": "329.0",
@@ -2419,7 +2419,7 @@
       "nombre": "DIAKHABY",
       "equipo": "VALENCIA CF",
       "tengo": true,
-      "repetidos": 2
+      "repetidos": 1
     },
     {
       "numero": "333.0",
@@ -2496,7 +2496,7 @@
       "nombre": "ESCUDO",
       "equipo": "VILLARREAL CF",
       "tengo": true,
-      "repetidos": 3
+      "repetidos": 2
     },
     {
       "numero": "344.0",
@@ -2545,7 +2545,7 @@
       "nombre": "SERGI CARDONA",
       "equipo": "VILLARREAL CF",
       "tengo": true,
-      "repetidos": 2
+      "repetidos": 1
     },
     {
       "numero": "351.0",
@@ -2615,7 +2615,7 @@
       "nombre": "AYOZE",
       "equipo": "VILLARREAL CF",
       "tengo": true,
-      "repetidos": 0
+      "repetidos": 1
     }
   ],
   "repetidos": [
@@ -2752,6 +2752,12 @@
       "copias": 1
     },
     {
+      "numero": "46",
+      "nombre": "BARRIOS",
+      "equipo": "ATLÉTICO DE MADRID",
+      "copias": 1
+    },
+    {
       "numero": "49",
       "nombre": "ALMADA",
       "equipo": "ATLÉTICO DE MADRID",
@@ -2820,6 +2826,12 @@
     {
       "numero": "79",
       "nombre": "NATAN",
+      "equipo": "REAL BETIS",
+      "copias": 1
+    },
+    {
+      "numero": "80",
+      "nombre": "VALENTÍN GÓMEZ",
       "equipo": "REAL BETIS",
       "copias": 1
     },
@@ -3022,6 +3034,12 @@
       "copias": 2
     },
     {
+      "numero": "145",
+      "nombre": "ESCUDO",
+      "equipo": "GETAFE CF",
+      "copias": 1
+    },
+    {
       "numero": "146",
       "nombre": "DAVID SORIA",
       "equipo": "GETAFE CF",
@@ -3052,6 +3070,12 @@
       "copias": 1
     },
     {
+      "numero": "162",
+      "nombre": "COBA",
+      "equipo": "GETAFE CF",
+      "copias": 1
+    },
+    {
       "numero": "163",
       "nombre": "ESCUDO",
       "equipo": "GIRONA FC",
@@ -3066,6 +3090,12 @@
     {
       "numero": "166",
       "nombre": "ARNAU",
+      "equipo": "GIRONA FC",
+      "copias": 1
+    },
+    {
+      "numero": "168",
+      "nombre": "VITOR REIS",
       "equipo": "GIRONA FC",
       "copias": 1
     },
@@ -3144,6 +3174,12 @@
     {
       "numero": "190",
       "nombre": "ORIOL REY",
+      "equipo": "LEVANTE UD",
+      "copias": 1
+    },
+    {
+      "numero": "191",
+      "nombre": "PABLO MARTÍNEZ",
       "equipo": "LEVANTE UD",
       "copias": 1
     },
@@ -3229,11 +3265,17 @@
       "numero": "216",
       "nombre": "VINÍCIUS",
       "equipo": "REAL MADRID",
-      "copias": 3
+      "copias": 2
     },
     {
       "numero": "217",
       "nombre": "ESCUDO",
+      "equipo": "RCD MALLORCA",
+      "copias": 1
+    },
+    {
+      "numero": "218",
+      "nombre": "LEO ROMÁN",
       "equipo": "RCD MALLORCA",
       "copias": 1
     },
@@ -3358,6 +3400,12 @@
       "copias": 2
     },
     {
+      "numero": "254",
+      "nombre": "AARON ESCANDELL",
+      "equipo": "REAL OVIEDO",
+      "copias": 1
+    },
+    {
       "numero": "255",
       "nombre": "MOLDOVAN",
       "equipo": "REAL OVIEDO",
@@ -3379,7 +3427,7 @@
       "numero": "258",
       "nombre": "DAVID CARMO",
       "equipo": "REAL OVIEDO",
-      "copias": 2
+      "copias": 1
     },
     {
       "numero": "259",
@@ -3439,7 +3487,7 @@
       "numero": "278",
       "nombre": "PEP CHAVARRÍA",
       "equipo": "RAYO VALLECANO",
-      "copias": 3
+      "copias": 2
     },
     {
       "numero": "279",
@@ -3571,7 +3619,7 @@
       "numero": "313",
       "nombre": "KIKE SALAS",
       "equipo": "SEVILLA FC",
-      "copias": 2
+      "copias": 1
     },
     {
       "numero": "314",
@@ -3607,7 +3655,7 @@
       "numero": "321",
       "nombre": "EJUKE",
       "equipo": "SEVILLA FC",
-      "copias": 3
+      "copias": 2
     },
     {
       "numero": "322",
@@ -3622,10 +3670,16 @@
       "copias": 2
     },
     {
+      "numero": "324",
+      "nombre": "ALEXIS SÁNCHEZ",
+      "equipo": "SEVILLA FC",
+      "copias": 1
+    },
+    {
       "numero": "325",
       "nombre": "ESCUDO",
       "equipo": "VALENCIA CF",
-      "copias": 3
+      "copias": 2
     },
     {
       "numero": "326",
@@ -3643,7 +3697,7 @@
       "numero": "328",
       "nombre": "FOULQUIER",
       "equipo": "VALENCIA CF",
-      "copias": 2
+      "copias": 1
     },
     {
       "numero": "329",
@@ -3667,7 +3721,7 @@
       "numero": "332",
       "nombre": "DIAKHABY",
       "equipo": "VALENCIA CF",
-      "copias": 2
+      "copias": 1
     },
     {
       "numero": "333",
@@ -3709,7 +3763,7 @@
       "numero": "343",
       "nombre": "ESCUDO",
       "equipo": "VILLARREAL CF",
-      "copias": 3
+      "copias": 2
     },
     {
       "numero": "344",
@@ -3727,7 +3781,7 @@
       "numero": "350",
       "nombre": "SERGI CARDONA",
       "equipo": "VILLARREAL CF",
-      "copias": 2
+      "copias": 1
     },
     {
       "numero": "351",
@@ -3772,10 +3826,16 @@
       "copias": 1
     },
     {
+      "numero": "360",
+      "nombre": "AYOZE",
+      "equipo": "VILLARREAL CF",
+      "copias": 1
+    },
+    {
       "numero": "361",
       "nombre": "D. ALAVÉS",
       "equipo": "¡VAMOS!",
-      "copias": 4
+      "copias": 3
     },
     {
       "numero": "363",
@@ -3820,16 +3880,28 @@
       "copias": 1
     },
     {
+      "numero": "378",
+      "nombre": "SEVILLA FC",
+      "equipo": "¡VAMOS!",
+      "copias": 1
+    },
+    {
       "numero": "383",
       "nombre": "DAVID SORIA",
       "equipo": "GETAFE CF",
       "copias": 1
     },
     {
+      "numero": "386",
+      "nombre": "REMIRO",
+      "equipo": "REAL SOCIEDAD",
+      "copias": 1
+    },
+    {
       "numero": "387",
       "nombre": "AGIRREZABALA",
       "equipo": "VALENCIA CF",
-      "copias": 4
+      "copias": 3
     },
     {
       "numero": "391",
@@ -3998,6 +4070,12 @@
       "nombre": "MARCOS LLORENTE",
       "equipo": "ATLÉTICO DE MADRID",
       "copias": 2
+    },
+    {
+      "numero": "447",
+      "nombre": "ALMADA",
+      "equipo": "ATLÉTICO DE MADRID",
+      "copias": 1
     },
     {
       "numero": "448",
@@ -5066,7 +5144,7 @@
         "numero": "8MN",
         "nombre": "SANTAMARIA",
         "equipo": "VALENCIA CF",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "9MN",
