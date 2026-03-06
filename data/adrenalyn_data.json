@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "ultima_actualizacion": "2026-03-04T19:56:18.830084",
+    "ultima_actualizacion": "2026-03-06T17:45:01.432707",
     "version": "2.0"
   },
   "resumen": [
@@ -753,7 +753,7 @@
       "nombre": "JAVI RUEDA",
       "equipo": "RC CELTA",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": "95.0",
@@ -837,7 +837,7 @@
       "nombre": "IAGO ASPAS",
       "equipo": "RC CELTA",
       "tengo": true,
-      "repetidos": 2
+      "repetidos": 1
     },
     {
       "numero": "107.0",
@@ -1579,7 +1579,7 @@
       "nombre": "MASTANTUONO",
       "equipo": "REAL MADRID",
       "tengo": true,
-      "repetidos": 2
+      "repetidos": 1
     },
     {
       "numero": "213.0",
@@ -1691,7 +1691,7 @@
       "nombre": "DARDER",
       "equipo": "RCD MALLORCA",
       "tengo": true,
-      "repetidos": 1
+      "repetidos": 0
     },
     {
       "numero": "229.0",
@@ -2866,12 +2866,6 @@
       "copias": 2
     },
     {
-      "numero": "94",
-      "nombre": "JAVI RUEDA",
-      "equipo": "RC CELTA",
-      "copias": 1
-    },
-    {
       "numero": "95",
       "nombre": "JAVI RODRÍGUEZ",
       "equipo": "RC CELTA",
@@ -2917,7 +2911,7 @@
       "numero": "106",
       "nombre": "IAGO ASPAS",
       "equipo": "RC CELTA",
-      "copias": 2
+      "copias": 1
     },
     {
       "numero": "108",
@@ -3241,7 +3235,7 @@
       "numero": "212",
       "nombre": "MASTANTUONO",
       "equipo": "REAL MADRID",
-      "copias": 2
+      "copias": 1
     },
     {
       "numero": "213",
@@ -3318,12 +3312,6 @@
     {
       "numero": "226",
       "nombre": "SAMÚ COSTA",
-      "equipo": "RCD MALLORCA",
-      "copias": 1
-    },
-    {
-      "numero": "228",
-      "nombre": "DARDER",
       "equipo": "RCD MALLORCA",
       "copias": 1
     },
