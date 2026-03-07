@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "ultima_actualizacion": "2026-03-06T17:45:01.432707",
+    "ultima_actualizacion": "2026-03-07T15:34:06.736676",
     "version": "2.0"
   },
   "resumen": [
     {
       "categoria": "REGULARES",
       "total": 360,
-      "tengo": 339,
-      "faltan": 21,
-      "progreso": 0.9416666667
+      "tengo": 340,
+      "faltan": 20,
+      "progreso": 0.9444444444
     },
     {
       "categoria": "ESTADIOS",
@@ -77,23 +77,23 @@
     {
       "categoria": "Ampliación",
       "total": 46,
-      "tengo": 28,
-      "faltan": 18,
-      "progreso": 0.6086956522
+      "tengo": 35,
+      "faltan": 11,
+      "progreso": 0.7608695652
     },
     {
       "categoria": "Especiales",
       "total": 36,
-      "tengo": 9,
-      "faltan": 27,
-      "progreso": 0.25
+      "tengo": 17,
+      "faltan": 19,
+      "progreso": 0.4722222222
     },
     {
       "categoria": "TOTAL COLECCIÓN",
       "total": 595,
-      "tengo": 514,
-      "faltan": 81,
-      "progreso": 0.8638655462184874
+      "tengo": 530,
+      "faltan": 65,
+      "progreso": 0.8907563025210085
     }
   ],
   "regulares": [
@@ -2173,7 +2173,7 @@
       "numero": "297.0",
       "nombre": "GORROTXATEGI",
       "equipo": "REAL SOCIEDAD",
-      "tengo": false,
+      "tengo": true,
       "repetidos": 0
     },
     {
@@ -3904,6 +3904,12 @@
       "copias": 1
     },
     {
+      "numero": "393",
+      "nombre": "MILITAO",
+      "equipo": "REAL MADRID",
+      "copias": 1
+    },
+    {
       "numero": "396",
       "nombre": "MOURIÑO",
       "equipo": "VILLARREAL CF",
@@ -4126,6 +4132,12 @@
       "copias": 1
     },
     {
+      "numero": "4MN",
+      "nombre": "CALETA-CAR",
+      "equipo": "REAL SOCIEDAD",
+      "copias": 1
+    },
+    {
       "numero": "9MN",
       "nombre": "AMRABAT",
       "equipo": "REAL BETIS",
@@ -4226,6 +4238,12 @@
       "nombre": "ESTADIO",
       "equipo": "RAYO VALLECANO",
       "copias": 2
+    },
+    {
+      "numero": "307",
+      "nombre": "ESTADIO",
+      "equipo": "SEVILLA FC",
+      "copias": 1
     },
     {
       "numero": "325",
@@ -5200,13 +5218,13 @@
         "numero": "32 Bis",
         "nombre": "ROBERT NAVARRO",
         "equipo": "ATHLETIC CLUB",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "42 Bis",
         "nombre": "GIMÉNEZ",
         "equipo": "ATLÉTICO DE MADRID",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "44 Bis",
@@ -5254,7 +5272,7 @@
         "numero": "85 Bis",
         "nombre": "MARC ROCA",
         "equipo": "REAL BETIS",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "89 Bis",
@@ -5332,7 +5350,7 @@
         "numero": "208 Bis",
         "nombre": "CAMAVINGA",
         "equipo": "REAL MADRID",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "215 Bis",
@@ -5356,7 +5374,7 @@
         "numero": "234 Bis",
         "nombre": "ABDÓN",
         "equipo": "RCD MALLORCA",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "247 Bis",
@@ -5410,7 +5428,7 @@
         "numero": "342 Bis",
         "nombre": "LUCAS BELTRÁN",
         "equipo": "VALENCIA CF",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "356 Bis",
@@ -5452,7 +5470,7 @@
         "numero": "418 Bis",
         "nombre": "PAPE GUEYE",
         "equipo": "VILLARREAL CF",
-        "tengo": false
+        "tengo": true
       }
     ],
     "Especiales": [
@@ -5592,7 +5610,7 @@
         "numero": "2 Sobre Premium",
         "nombre": "Williams (Firma Serigrafiada)",
         "equipo": "ATHLETIC CLUB",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "3 Sobre Premium",
@@ -5634,43 +5652,43 @@
         "numero": "1 Sobre Premium Oro",
         "nombre": "Pedri (Premium Oro)",
         "equipo": "FC BARCELONA",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "2 Sobre Premium Oro",
         "nombre": "Lamine Yamal (Premium Oro)",
         "equipo": "FC BARCELONA",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "3 Sobre Premium Oro",
         "nombre": "Isco (Premium Oro)",
         "equipo": "REAL BETIS",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "4 Sobre Premium Oro",
         "nombre": "Joan García (Revelación Oro)",
         "equipo": "FC BARCELONA",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "5 Sobre Premium Oro",
         "nombre": "Hancko",
         "equipo": "ATLÉTICO DE MADRID",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "6 Sobre Premium Oro",
         "nombre": "Bellingham",
         "equipo": "REAL MADRID",
-        "tengo": false
+        "tengo": true
       },
       {
         "numero": "7 Sobre Premium Oro",
         "nombre": "De Frutos",
         "equipo": "RAYO VALLECANO",
-        "tengo": false
+        "tengo": true
       }
     ]
   },
